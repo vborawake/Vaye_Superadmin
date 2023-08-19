@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+    color: #FFF;
+}
+
+input {
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+.success {
+    color: #17984A;
+}
+
+.pending {
+    color: #EBA222;
+}
+
+.container-fluid #sidebar {
+    border-right: 2px solid #F1EAEA;
+    /* padding: 0; */
+}
+
+.container-fluid #sidebar #logo {
+    width: 60%;
+}
+
+.container-fluid #sidebar a.active {
+    position: relative;
+    background: #EEF2FC;
+}
+
+.container-fluid #sidebar a.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0.2rem;
+    height: 100%;
+    background: #09338F;
+}
+
+.container-fluid #sidebar a .col-9 p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #09338F;
+}
+
+.container-fluid #sidebar a p {
+    margin: 0;
+}
+
+.container-fluid #content #user img:nth-child(2) {
+    width: 3rem;
+    height: 3rem;
+}
+
+.container-fluid #content {
+    position: absolute;
+    left: 16.67%;
+    padding-right: 0;
+}
+
+.container-fluid #content #header {
+    height: 5.5rem;
+    border-bottom: 2px solid #F1EAEA;
+}
+
+.container-fluid #content #header .col-8 p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #09338F;
+}
+
+.container-fluid #content #header #user p {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.container-fluid #content #header .navbar .navbar-toggler {
+    border: none;
+    background: #09338F;
+    height: 3rem;
+    width: 4rem;
+}
+
+.container-fluid #content #stat {
+    height: 9rem;
+    border-radius: 1.2rem;
+    background: linear-gradient(180deg, #09338F 0%, #5B7ECB 100%);
+    color: #FFF;
+}
+
+.container-fluid #content #stat.border_box {
+    border: 2px solid #189A40;
+    background: none;
+}
+
+.container-fluid #content #stat.border_box p:nth-child(1) {
+    font-size: 2rem;
+}
+
+.container-fluid #content #stat.border_box p:nth-child(2) {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.container-fluid #content #stat p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.container-fluid #content .box {
+    border: 2px solid #09338F;
+    border-radius: 1.2rem;
+}
+
+.container-fluid #content #bar_chart {
+    height: 30rem;
+    padding-bottom: 3rem !important;
+}
+
+.container-fluid #content #area_chart p,
+.container-fluid #content #bar_chart p {
+    margin: 0;
+}
+
+.container-fluid #content #area_chart_header > div:nth-child(1) p,
+.container-fluid #content #bar_chart_header > div:nth-child(1) p,
+.container-fluid #content .payment_table_header div:nth-child(1) p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #09338F;
+}
+
+.container-fluid #content #area_chart_header > div:nth-child(2),
+.container-fluid #content #bar_chart_header div:nth-child(2) {
+    border-radius: 0.6rem;
+    font-weight: 600;
+    font-size: 1rem !important;
+    border: 2px solid #F1EAEA;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.container-fluid #content #bar_chart_header div:nth-child(2) {
+    background: #F1EAEA;
+}
+
+.container-fluid #content #area_chart_header div:nth-child(2) div.active,
+.container-fluid #content #bar_chart_header div:nth-child(2) div.active {
+    background: #09338F;
+    color: #FFF;
+}
+
+.container-fluid #content .payment_table_header div:nth-child(2) a p {
+    color: #09338F;
+    font-size: 1rem;
+    text-decoration: underline;
+}
+
+.container-fluid #content #payment_table {
+    width: 45%;
+}
+
+.container-fluid #content #table #value span {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    background: #D6D6D6;
+    border-radius: 0.6rem;
+    margin-right: 1rem;
+}
+
+.container-fluid #content #table #value {
+    background: #FFF;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 0.6rem;
+}
+
+.container-fluid #content #table #value #left_side div p {
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.container-fluid #content #table #value #right_side p {
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid #content #table #value #left_side div p:nth-child(1) {
+    font-size: 1rem;
+}
+
+.container-fluid #content #table #value #left_side div .time {
+    color: #09338F;
+}
+
+.container-fluid #content #listing #area_chart_header div:nth-child(2) {
+    border: none;
+}
+
+.container-fluid #content .dropdown button {
+    width: 10rem;
+    text-align: left;
+}
+
+.container-fluid #content .dropdown-toggle {
+    position: relative;
+}
+
+.container-fluid #content .dropdown-toggle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    right: 1rem;
+    display: block;
+    height: fit-content;
+}
+
+.container-fluid #content #listing_table #table_header,
+.container-fluid #content #listing_table #table_value {
+    background: #09338F;
+    color: #FFF;
+    border-radius: 0.6rem;
+}
+
+.container-fluid #content #listing_table #table_value {
+    color: #000;
+    background: none;
+}
+
+.container-fluid #content #listing_table .colored#table_value {
+    background: #EEF2FC;
+}
+
+.container-fluid #content #listing_table #table_value button {
+    border: none;
+    background: none;
+}
+
+.container-fluid #content #auction_details .box {
+    background: #2953A5;
+}
+
+.container-fluid #content #auction_details .box .col-8 {
+    color: #FFF;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.container-fluid #content #auction_details #auction_data {
+    color: #FFF;
+    font-weight: 600;
+    margin-bottom: 1.9rem !important;
+}
+
+.container-fluid #content #auction_details #auction_data span {
+    width: 3rem;
+    height: 0.5rem;
+    border-radius: 1.2rem;
+}
+
+.container-fluid #content #auction_details #auction_data p {
+    margin: 0 0 0 1rem;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .container-fluid #content {
+        left: 25.05%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .container-fluid #content {
+        left: 25.05%;
+    }
+
+    .container-fluid #content #payment_table {
+        width: 100%;
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    .container-fluid #content {
+        left: 0;
+        width: 100%;
+    }
+
+    .offcanvas.offcanvas-start {
+        width: 40%;
+    }
+
+    .container-fluid #sidebar {
+        width: 40%;
+    }
+
+    .container-fluid #content #payment_table {
+        width: 100%;
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 576px) {
+    .container-fluid #content {
+        left: 0;
+        width: 100%;
+    }
+
+    .offcanvas.offcanvas-start {
+        width: 40%;
+    }
+
+    .container-fluid #sidebar {
+        width: 40%;
+    }
+
+    .container-fluid #content #payment_table {
+        width: 100%;
+        margin-top: 2rem;
+    }
+}

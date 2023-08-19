@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+    color: #FFF;
+}
+
+input {
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+.success {
+    color: #17984A;
+}
+
+.pending {
+    color: #EBA222;
+}
+
+.container-fluid #sidebar {
+    border-right: 2px solid #F1EAEA;
+    /* padding: 0; */
+}
+
+.container-fluid #sidebar #logo {
+    width: 60%;
+}
+
+.container-fluid #sidebar a.active {
+    position: relative;
+    background: #EEF2FC;
+}
+
+.container-fluid #sidebar a.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0.2rem;
+    height: 100%;
+    background: #09338F;
+}
+
+.container-fluid #sidebar a .col-9 p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #09338F;
+}
+
+.container-fluid #sidebar a p {
+    margin: 0;
+}
+
+.container-fluid #content #user img:nth-child(2) {
+    width: 3rem;
+    height: 3rem;
+}
+
+.container-fluid #content {
+    position: absolute;
+    left: 16.67%;
+    padding-right: 0;
+}
+
+.container-fluid #content #header {
+    height: 5.5rem;
+    border-bottom: 2px solid #F1EAEA;
+}
+
+.container-fluid #content #header .col-8 p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #09338F;
+}
+
+.container-fluid #content #header #user p {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.container-fluid #content #header .navbar .navbar-toggler {
+    border: none;
+    background: #09338F;
+    height: 3rem;
+    width: 4rem;
+}
+
+.container-fluid #content #table_container {
+    border-radius: 0.6rem;
+    box-shadow: 0px 3px 6px #D3D3D3;
+}
+
+.container-fluid #content #table_container #table_value {
+    box-shadow: none;
+    border-bottom: 2px solid #D2D0D0;
+    border-radius: 0;
+}
+
+.container-fluid #content #table_container #table_value:last-child {
+    border-bottom: none;
+}
+
+.container-fluid #content .screen #screen_header {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #4B4B4B;
+}
+
+.container-fluid #content .screen #screen_header span {
+    color: #09338F;
+}
+
+.container-fluid #content .screen #screen_header input {
+    font-size: 1rem;
+    color: #09338F;
+    border: 2px solid #09338F;
+    border-radius: 0.6rem;
+    padding: 0.5rem 1rem;
+}
+
+.container-fluid #content .screen #screen_header input::placeholder {
+    color: #09338F;
+}
+
+.container-fluid #content .screen #screen_header button {
+    font-size: 1rem;
+    width: fit-content;
+    padding: 0.6rem 1rem !important;
+    background: none;
+    border: 2px solid #09338F;
+    color: #09338F;
+}
+
+.container-fluid #content .screen .input {
+    margin-bottom: 2rem !important;
+}
+
+.container-fluid #content .screen button {
+    border-radius: 0.6rem;
+    background: #09338F;
+    color: #FFF;
+    font-weight: 700;
+    border: none;
+    margin-left: 16.67%;
+    width: 10rem;
+    padding: 0.5rem 2rem;
+}
+
+.container-fluid .popup {
+    position: fixed;
+    top: 15%;
+    left: 32.5%;
+    width: 35%;
+    border: 2px solid #707070;
+}
+
+.container-fluid .popup .popup_header {
+    background: none;
+    color: #09338F;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.container-fluid .popup .popup_header img {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.container-fluid .popup .input input,
+.container-fluid .popup .input textarea {
+    border: 2px solid #707070;
+    margin: 0.5rem 0 0 0;
+    padding: 0.2rem;
+    font-size: 1rem;
+}
+
+.container-fluid .popup .input p {
+    font-weight: 700;
+}
+
+.container-fluid .popup .input textarea {
+    height: 3rem;
+}
+
+.container-fluid .popup .file_select {
+    width: 60%;
+}
+
+.container-fluid .popup .file_select > input {
+    border: none;
+}
+
+.container-fluid .popup .file_select > div {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.container-fluid .popup .file_select > div input {
+    width: 100%;
+}
+
+.container-fluid .popup button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.6rem;
+    border: none;
+}
+
+.container-fluid .popup button:nth-child(1) {
+    background: #09338F;
+    color: #FFF;
+}
+
+.container-fluid .popup button:nth-child(2) {
+    background: #E4EAFD;
+    color: #09338F;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .container-fluid #content {
+        left: 25.05%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .container-fluid #content {
+        left: 25.05%;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    .container-fluid #content {
+        left: 0;
+        width: 100%;
+    }
+
+    .offcanvas.offcanvas-start {
+        width: 40%;
+    }
+
+    .container-fluid #sidebar {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 576px) {
+    .container-fluid #content {
+        left: 0;
+        width: 100%;
+    }
+
+    .offcanvas.offcanvas-start {
+        width: 40%;
+    }
+
+    .container-fluid #sidebar {
+        width: 40%;
+    }
+}

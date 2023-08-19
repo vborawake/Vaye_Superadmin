@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+    color: #FFF;
+}
+
+input {
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+.success {
+    color: #17984A;
+}
+
+.pending {
+    color: #EBA222;
+}
+
+.container-fluid #sidebar {
+    border-right: 2px solid #F1EAEA;
+    /* padding: 0; */
+}
+
+.container-fluid #sidebar #logo {
+    width: 60%;
+}
+
+.container-fluid #sidebar a.active {
+    position: relative;
+    background: #EEF2FC;
+}
+
+.container-fluid #sidebar a.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0.2rem;
+    height: 100%;
+    background: #09338F;
+}
+
+.container-fluid #sidebar a .col-9 p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #09338F;
+}
+
+.container-fluid #sidebar a p {
+    margin: 0;
+}
+
+.container-fluid #content #user img:nth-child(2) {
+    width: 3rem;
+    height: 3rem;
+}
+
+.container-fluid #content {
+    position: absolute;
+    left: 16.67%;
+    padding-right: 0;
+}
+
+.container-fluid #content #header {
+    height: 5.5rem;
+    border-bottom: 2px solid #F1EAEA;
+}
+
+.container-fluid #content #header .col-8 p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #09338F;
+}
+
+.container-fluid #content #header #user p {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.container-fluid #content #header .navbar .navbar-toggler,
+.container-fluid #content .navbar .navbar-toggler {
+    border: none;
+    background: #09338F;
+    height: 3rem;
+    width: 4rem;
+}
+
+.container-fluid #content #search {
+    position: relative;
+    height: 3rem;
+}
+
+.container-fluid #content #search input {
+    border-radius: 0.6rem;
+    height: 100%;
+    width: 100%;
+    background: #EEF2FC;
+    color: #A4A5A5;
+    padding-left: 3.2rem !important;
+}
+
+.container-fluid #content #search input::placeholder {
+    color: #A4A5A5;
+}
+
+.container-fluid #content #search img {
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    bottom: 0;
+    margin: auto 0;
+    height: 50%;
+    width: auto;
+    padding: 0;
+}
+
+.container-fluid #content #chat_user {
+    border-radius: 0.6rem;
+    background: #FFF;
+    box-shadow: 0px 3px 6px #00000029;
+    height: 5rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.container-fluid #content #chat_user.active {
+    position: relative;
+    background: #EEF2FC;
+}
+
+.container-fluid #content #chat_user.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 80%;
+    width: 0.2rem;
+    background: #09338F;
+    margin: auto 0;
+}
+
+.container-fluid #content #chat_user .col-2:nth-child(1) {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.container-fluid #content #chat_user #user_last_message,
+.container-fluid #content #chat_user #time {
+    font-size: 0.8rem;
+}
+
+.container-fluid #content #chat_user #time {
+    font-weight: 600;
+    color: #09338F;
+}
+.container-fluid #content #messages_section {
+    background: #EEF2FC;
+}
+
+.container-fluid #content #messages_section_header {
+    background: #09338F;
+    height: 4rem;
+}
+
+.container-fluid #content #messages_section_header_left img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.container-fluid #content #messages_section_header_left p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #FFF;
+    margin: 0;
+}
+
+.container-fluid #content #messages_section #typing_box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.5rem;
+    margin: 0 auto;
+    border-radius: 10rem;
+    /* height: 3rem; */
+    background: #FFF;
+    border: 2px solid #B5B1B1;
+}
+
+.container-fluid #content #messages_section #typing_box #text_input_image {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    background: #09338F;
+}
+
+.container-fluid #content #messages_section #typing_box #text_input_image img {
+    width: 50%;
+}
+
+.container-fluid #content #messages_section #typing_box input {
+    height: 100%;
+    width: 80%;
+    padding: 0.5rem 1rem;
+}
+
+.container-fluid #content #messages_section .row:nth-child(2) {
+    overflow: scroll !important;
+}
+
+.container-fluid #content #messages_section .row:nth-child(2)::-webkit-scrollbar {
+    display: none;
+}
+
+.container-fluid #content #messages_section #message {
+    background: #FFF;
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+}
+
+.container-fluid #content #messages_section #message_left_section img {
+    height: 3rem;
+    width: 3rem;
+}
+
+.container-fluid #content #messages_section #message_right_section p {
+    margin: 0;
+}
+
+.container-fluid #content #messages_section #message_right_section p:nth-child(1) {
+    font-weight: 700;
+}
+
+.container-fluid #content #messages_section #message_right_section p:nth-child(2) {
+    font-size: 0.9rem;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .container-fluid #content {
+        left: 25.05%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .container-fluid #content {
+        left: 0;
+        width: 100%;
+    }
+
+    .offcanvas.offcanvas-start {
+        width: 30%;
+    }
+
+    #chat_section_offcanvas.offcanvas.offcanvas-start {
+        width: 50%;
+    }
+
+    .container-fluid #sidebar {
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    .container-fluid #content {
+        left: 0;
+        width: 100%;
+    }
+
+    .offcanvas.offcanvas-start {
+        width: 40%;
+    }
+
+    .container-fluid #sidebar {
+        width: 40%;
+    }
+
+    #chat_section_offcanvas.offcanvas.offcanvas-start {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 576px) {
+    .container-fluid #content {
+        left: 0;
+        width: 100%;
+    }
+
+    .offcanvas.offcanvas-start {
+        width: 40%;
+    }
+
+    .container-fluid #sidebar {
+        width: 40%;
+    }
+
+    #chat_section_offcanvas.offcanvas.offcanvas-start {
+        width: 80%;
+    }
+}

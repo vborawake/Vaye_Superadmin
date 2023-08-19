@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+    color: #FFF;
+}
+
+input {
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+.success {
+    color: #17984A;
+}
+
+.pending {
+    color: #EBA222;
+}
+
+.container-fluid #sidebar {
+    border-right: 2px solid #F1EAEA;
+    /* padding: 0; */
+}
+
+.container-fluid #sidebar #logo {
+    width: 60%;
+}
+
+.container-fluid #sidebar a.active {
+    position: relative;
+    background: #EEF2FC;
+}
+
+.container-fluid #sidebar a.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0.2rem;
+    height: 100%;
+    background: #09338F;
+}
+
+.container-fluid #sidebar a .col-9 p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #09338F;
+}
+
+.container-fluid #sidebar a p {
+    margin: 0;
+}
+
+.container-fluid #content #user img:nth-child(2) {
+    width: 3rem;
+    height: 3rem;
+}
+
+.container-fluid #content {
+    position: absolute;
+    left: 16.67%;
+    padding-right: 0;
+}
+
+.container-fluid #content #header {
+    height: 5.5rem;
+    border-bottom: 2px solid #F1EAEA;
+}
+
+.container-fluid #content #header .col-8 p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #09338F;
+}
+
+.container-fluid #content #header #user p {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.container-fluid #content #header .navbar .navbar-toggler {
+    border: none;
+    background: #09338F;
+    height: 3rem;
+    width: 4rem;
+}
+
+.container-fluid #content .settings_box {
+    border-radius: 0.6rem;
+    background: #EEF2FC;
+    box-shadow: 0px 3px 6px #00000029;
+    height: 18rem;
+}
+
+.container-fluid #content .settings_box p:nth-child(1) {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #09338F;
+}
+
+.container-fluid #content .settings_box p:nth-child(2) {
+    font-weight: 500;
+}
+
+.container-fluid #content .settings_box button {
+    background: none;
+    border: none;
+    /* width: 40%; */
+    border-radius: 0.6rem;
+    padding: 0.6rem 1.2rem;
+    background: #39407D;
+    color: #FFF;
+    align-self: flex-end;
+}
+
+.container-fluid #content .settings_box .user .image {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.container-fluid #content .settings_box .user #username {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.container-fluid #content .settings_box > div {
+    overflow: scroll;
+}
+
+.container-fluid #content .settings_box > div::-webkit-scrollbar {
+    display: none;
+}
+
+.container-fluid #content #table_container #table_heading {
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.container-fluid #content #table_container #table_header {
+    background: #39407D;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.container-fluid #content #table_container #table_value {
+    background: #FFF;
+    border: 2px solid #C4C4C4;
+    box-shadow: none;
+}
+
+.container-fluid .popup .inputs input {
+    height: 3rem;
+    width: 45%;
+    padding: 1rem;
+    border: 2px solid #F1EAEA !important;
+}
+
+.container-fluid .popup ul li {
+    list-style: disc;
+    color: #7B7878;
+}
+
+.container-fluid .popup .buttons button:nth-child(1) {
+    background: none;
+    color: #09338F;
+    border: none;
+}
+
+.container-fluid .popup .buttons button:nth-child(2) {
+    background: #17984A;
+    color: #FFF;
+    border: none;
+}
+
+.container-fluid #content #push_notifications > p {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.container-fluid #content #push_notifications div input {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.container-fluid #content #push_notifications div p {
+    font-weight: 500;
+}
+
+.container-fluid #content .notifications_settings {
+    padding: 1rem 2.5rem;
+    border-radius: 0.6rem;
+    background: #FFF;
+    box-shadow: 0px 3px 6px #00000029;
+}
+
+.container-fluid #content .notifications_settings .input p {
+    font-size: 1.1rem;
+}
+
+.container-fluid #content .notifications_settings .input input {
+    border-radius: 0.6rem;
+    width: 70%;
+}
+
+.container-fluid #content .notifications_settings .input .image {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    background: #FFF;
+    box-shadow: 0px 3px 6px #00000029;
+    overflow: hidden;
+}
+
+.container-fluid #content .notifications_settings button {
+    width: fit-content;
+    padding: 0.8rem 1.5rem;
+    background: #09338F;
+    border: none;
+    color: #FFF;
+    border-radius: 0.6rem;
+    margin-top: 3rem;
+}
+
+.container-fluid #content #checkbox_content p {
+    margin: 0;
+}
+
+.container-fluid #content #checkbox_content input {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .container-fluid #content {
+        left: 25.05%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .container-fluid #content {
+        left: 25.05%;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    .container-fluid #content {
+        left: 0;
+        width: 100%;
+    }
+
+    .offcanvas.offcanvas-start {
+        width: 40%;
+    }
+
+    .container-fluid #sidebar {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 576px) {
+    .container-fluid #content {
+        left: 0;
+        width: 100%;
+    }
+
+    .offcanvas.offcanvas-start {
+        width: 40%;
+    }
+
+    .container-fluid #sidebar {
+        width: 40%;
+    }
+}

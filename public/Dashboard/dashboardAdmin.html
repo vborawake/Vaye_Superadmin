@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../helper.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.1/chart.umd.js" integrity="sha512-ffRiucC+agltyOFQv5837tFGHFHq9tvevCk+mLE7pawA7SVgRS9TXFOT1bmHF8/aG/Pt7Bq7q94RSfuem/qKvw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="dashboard.js"></script>
+    <script defer src="../pagination.js"></script>
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="offcanvas-start" id="toggle_sidebar">
+                <div class="offcanvas-body">
+                    <div class="col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-4 position-fixed top-0 start-0 h-100" id="sidebar">
+                        <div class="row d-flex justify-content-center align-items-center"><img src="../images/Logo.png" alt="" id="logo"></div>
+                        <div class="row d-flex flex-column justify-content-between" style="height: 86%;">
+                            <div class="d-flex flex-column w-100 mt-4" id="links">
+                                <a href="../Dashboard/dashboardAdmin.html" class="row active d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/dashboard.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>Dashboard</p>
+                                    </div>
+                                </a>
+                                <a href="../Users/users.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/users_management.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>Users Management</p>
+                                    </div>
+                                </a>
+                                <a href="../Property/property.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/property_management.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>Property Management</p>
+                                    </div>
+                                </a>
+                                <a href="../Auctions/auctions.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/auction_management.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>Auctions Management</p>
+                                    </div>
+                                </a>
+                                <a href="../CMS/content.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/CMS.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>CMS</p>
+                                    </div>
+                                </a>
+                                <a href="../Billing/billing.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/credit_card.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>Billing</p>
+                                    </div>
+                                </a>
+                                <a href="../Report/report.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/report.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>Report</p>
+                                    </div>
+                                </a>
+                                <a href="../Support/support.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/support_management.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>Support Management</p>
+                                    </div>
+                                </a>
+                                <a href="../IM/instant_messageAdmin.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/chat_blue.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>IM</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="d-flex flex-row" id="bottom_buttons">
+                                <div class="col-3 d-flex justify-content-center align-items-center" onclick="showNotifications(event)">
+                                    <img src="../images/notification.png" alt="">
+                                </div>
+                                <div class="col-3 d-flex justify-content-center align-items-center">
+                                    <img src="../images/security.png" alt="">
+                                </div>
+                                <div class="col-3 d-flex justify-content-center align-items-center">
+                                    <img src="../images/info.png" alt="">
+                                </div>
+                                <div class="col-3 d-flex justify-content-center align-items-center">
+                                    <img src="../images/language.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-10 col-xl-10 col-lg-9 col-md-9 col-sm-8 p-0 m-0" id="content">
+                <div class="row d-flex flex-row align-items-center justify-content-between w-100 m-0" id="header">
+                    <div class="col-8 d-flex flex-row align-items-center">
+                        <div class="navbar navbar-dark">
+                            <div class="container-fluid">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#toggle_sidebar" aria-controls="toggle_sidebar" aria-expanded="false">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="m-0">Dashboard</p>
+                    </div>
+                    <div class="col-4 d-flex flex-row justify-content-end align-items-center pe-4" id="user">
+                        <img src="../icons/search_white.png" alt="search" class="me-4">
+                        <img src="../icons/delimitation-land-plots-concept.png" alt="" class="rounded-circle me-4">
+                        <p class="m-0">John</p>
+                    </div>
+                </div>
+                <div class="row d-flex flex-row justify-content-xl-between align-items-center p-4 m-0 justify-content-lg-start justify-content-md-start" id="stats">
+                    <div class="col-xxl-2 col-xl-2 col-lg-5 col-md-6 col-md-4 col-sm-5 d-flex flex-column pt-3 ps-4 mb-lg-2 me-lg-4 mb-md-2 me-md-4 stagger" id="stat">
+                        <p>50</p>
+                        <p>Total Users</p>
+                    </div>
+                    <div class="col-xxl-2 col-xl-2 col-lg-5 col-md-6 col-md-4 col-sm-5 d-flex flex-column pt-3 ps-4 mb-lg-2 me-lg-4 mb-md-2 me-md-4 stagger" id="stat" style="background: linear-gradient(180deg, #C6EEFB 0%, #98A3FF 100%);">
+                        <p>10</p>
+                        <p>VIP Users</p>
+                    </div>
+                    <div class="col-xxl-2 col-xl-2 col-lg-5 col-md-6 col-md-4 col-sm-5 d-flex flex-column pt-3 ps-4 mb-lg-2 me-lg-4 mb-md-2 me-md-4 stagger" id="stat" style="background: linear-gradient(180deg, #17984A 0%, #55C681 100%);">
+                        <p>22</p>
+                        <p>Total Auctions</p>
+                    </div>
+                    <div class="col-xxl-2 col-xl-2 col-lg-5 col-md-6 col-md-4 col-sm-5 d-flex flex-column pt-3 ps-4 mb-lg-2 me-lg-4 mb-md-2 me-md-4 stagger" id="stat" style="background: linear-gradient(180deg, #F34444 0%, #EF8282 100%);">
+                        <p>22%</p>
+                        <p>Profit</p>
+                    </div>
+                    <div class="col-xxl-2 col-xl-2 col-lg-5 col-md-6 col-md-4 col-sm-5 d-flex flex-column pt-3 ps-4 mb-lg-2 me-lg-4 mb-md-2 me-md-4 stagger" id="stat" style="background: linear-gradient(180deg, #EBA222 0%, #ECC37B 100%);">
+                        <p>$ 345</p>
+                        <p>Revenue</p>
+                    </div>
+                </div>
+                <div class="row d-flex flex-row justify-content-xl-between align-items-center p-4 m-0 justify-content-lg-start justify-content-md-start" id="stats">
+                    <div class="col-xxl-4 col-xl-4 col-lg-3 col-sm-2 m-0 p-0 pe-4 d-flex flex-column stagger">
+                        <div class="col-12 p-4 border_box d-flex justify-content-between align-items-center" style="background: linear-gradient(122deg, #189A40 0%, #0C4D20 100%);" id="stat">
+                            <div class="col-8 d-flex m-0 p-0 h-100 flex-column justify-content-between">
+                                <p>500</p>
+                                <p>Lands for Sale</p>
+                            </div>
+                            <div class="m-0 p-0 col-4"><img src="../icons/image 4.png" style="object-fit: contain; width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-xl-4 col-lg-3 col-sm-2 m-0 p-0 pe-4 d-flex flex-column stagger">
+                        <div class="col-12 p-4 border_box d-flex justify-content-between align-items-center" style="color: #000;" id="stat">
+                            <div class="col-8 d-flex m-0 p-0 h-100 flex-column justify-content-between">
+                                <p>500</p>
+                                <p>Lands for Sale</p>
+                            </div>
+                            <div class="m-0 p-0 col-4">
+                                <div class="m-0 p-0 d-flex justify-content-center align-items-center progress_wrapper">
+                                    <div class="m-0 p-0 percentage">
+                                        <p class="m-0 p-0 d-flex justify-content-center align-items-center">50%</p>
+                                    </div>
+                                    <div class="half first m-0 p-0"></div>
+                                    <div class="half second m-0 p-0"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-xl-4 col-lg-3 col-sm-2 m-0 p-0 pe-4 d-flex flex-column stagger">
+                        <div class="col-12 p-4 border_box d-flex justify-content-between align-items-center" style="color: #000;" id="stat">
+                            <div class="col-8 d-flex m-0 p-0 h-100 flex-column justify-content-between">
+                                <p>500</p>
+                                <p>Lands for Sale</p>
+                            </div>
+                            <div class="m-0 p-0 col-4">
+                                <div class="m-0 p-0 d-flex justify-content-center align-items-center progress_wrapper">
+                                    <div class="m-0 p-0 percentage">
+                                        <p class="m-0 p-0 d-flex justify-content-center align-items-center">50%</p>
+                                    </div>
+                                    <div class="half first m-0 p-0"></div>
+                                    <div class="half second m-0 p-0"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex flex-column m-0 p-4">
+                    <div class="col-12 p-2 box stagger" id="bar_chart">
+                        <div class="row flex-row justify-content-between m-0 p-0 box_header" id="bar_chart_header">
+                            <div class="col-7 d-flex flex-row align-items-center">
+                                <p class="me-4">Total Revenue - $678,345</p>
+                                <p>Last month $563,443</p>
+                            </div>
+                            <div class="col-2 d-flex flex-row justify-content-center align-items-center p-3 py-2 position-relative">
+                                <div class="col-12 d-flex flex-row justify-content-between align-items-center">
+                                    <p class="m-0 me-3">May 2023</p>
+                                    <img src="../images/calendar.png" alt="">
+                                </div>
+                                <input type="date" class="position-absolute top-0 left-0 w-100 h-100 opacity-0" onclick="event.currentTarget.showPicker()">
+                            </div>
+                        </div>
+                        <canvas id="bar"></canvas>
+                    </div>
+                </div>
+                <div class="row d-flex flex-row m-0 p-4">
+                    <div class="col-8 stagger p-0 pe-4">
+                        <div class="m-0 p-0 p-2 box">
+                            <div class="row flex-row justify-content-between m-0 p-0 box_header" id="bar_chart_header">
+                                <div class="col-7 d-flex flex-row align-items-center">
+                                    <p>Traffic-per visit</p>
+                                </div>
+                                <div class="col-3 d-flex flex-row justify-content-center align-items-center p-3 py-2 position-relative">
+                                    <div class="col-12 d-flex flex-row justify-content-between align-items-center">
+                                        <p class="m-0 me-3">May 2023</p>
+                                        <img src="../images/calendar.png" alt="">
+                                    </div>
+                                    <input type="date" class="position-absolute top-0 left-0 w-100 h-100 opacity-0" onclick="event.currentTarget.showPicker()">
+                                </div>
+                            </div>
+                            <canvas id="traffic_line"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-4 stagger p-0 d-flex flex-grow-1" id="auction_details">
+                        <div class="m-0 p-2 pe-4 box">
+                            <div class="row d-flex flex-row justify-content-between align-items-center m-0 p-0 mb-3 box_header">
+                                <div class="col-8 d-flex flex-row align-items-center">
+                                    <p class="m-0">Auctions</p>
+                                </div>
+                                <div class="col-4 p-0 d-flex flex-row justify-content-end align-items-center">
+                                    <div class="dropdown">
+                                        <button style="color: #FFF;" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">All</button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#" class="dropdown-item">All</a></li>
+                                            <li><a href="#" class="dropdown-item">Active</a></li>
+                                            <li><a href="#" class="dropdown-item">New</a></li>
+                                            <li><a href="#" class="dropdown-item">Ols</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0" id="auction_summary">
+                                <div class="row m-0 p-0 d-flex" id="auction_data">
+                                    <div class="col-10 d-flex align-items-center">
+                                        <span style="background: #FFF;"></span>
+                                        <p>Auctions Posted</p>
+                                    </div>
+                                    <div class="col-2 d-flex align-items-center">
+                                        <p>64%</p>
+                                    </div>
+                                </div>
+                                <div class="row m-0 p-0 d-flex" id="auction_data">
+                                    <div class="col-10 d-flex align-items-center">
+                                        <span style="background: #189A40;"></span>
+                                        <p>Auctions Succeeded</p>
+                                    </div>
+                                    <div class="col-2 d-flex align-items-center">
+                                        <p>64%</p>
+                                    </div>
+                                </div>
+                                <div class="row m-0 p-0 d-flex" id="auction_data">
+                                    <div class="col-10 d-flex align-items-center">
+                                        <span style="background: #4074ED;"></span>
+                                        <p>Total Participants</p>
+                                    </div>
+                                    <div class="col-2 d-flex align-items-center">
+                                        <p>64%</p>
+                                    </div>
+                                </div>
+                                <div class="row m-0 p-0 d-flex" id="auction_data">
+                                    <div class="col-10 d-flex align-items-center">
+                                        <span style="background: #AFF6C5;"></span>
+                                        <p>Verified Users</p>
+                                    </div>
+                                    <div class="col-2 d-flex align-items-center">
+                                        <p>64%</p>
+                                    </div>
+                                </div>
+                                <div class="row m-0 p-0 d-flex" id="auction_data">
+                                    <div class="col-10 d-flex align-items-center">
+                                        <span style="background: #EBB961;"></span>
+                                        <p>Paid To Proceed</p>
+                                    </div>
+                                    <div class="col-2 d-flex align-items-center">
+                                        <p>64%</p>
+                                    </div>
+                                </div>
+                                <div class="row m-0 p-0 d-flex" id="auction_data">
+                                    <div class="col-10 d-flex align-items-center">
+                                        <span style="background: #E81C45;"></span>
+                                        <p>Cancelled</p>
+                                    </div>
+                                    <div class="col-2 d-flex align-items-center">
+                                        <p>64%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex flex-row align-items-center justify-content-between m-0 p-4" id="charts">
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 p-2 box stagger" id="area_chart">
+                        <div class="row flex-row justify-content-between m-0 p-0 box_header" id="area_chart_header">
+                            <div class="col-4 d-flex flex-row align-items-center">
+                                <p>Daily Income</p>
+                            </div>
+                            <div class="col-5 d-flex flex-row justify-content-center align-items-center">
+                                <div class="col-4 d-flex flex-row justify-content-center align-items-center">Day</div>
+                                <div class="active col-4 d-flex flex-row justify-content-center align-items-center">Month</div>
+                                <div class="col-4 d-flex flex-row justify-content-center align-items-center">Year</div>
+                            </div>
+                            <canvas id="area"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 box px-4 py-3 stagger" id="payment_table">
+                        <div class="row flex-row justify-content-between m-0 p-0 payment_table_header stagger">
+                            <div class="col-6 d-flex flex-row align-items-center m-0 p-0">
+                                <p>Total Profit % 2022-23</p>
+                            </div>
+                        </div>
+                        <div class="row d-flex flex-column m-0 p-0" id="table">
+                            <canvas id="bar2"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-5 col-sm-6 d-flex flex-column rounded position-absolute p-0" id="nav_menu">
+                    <div class="row m-0 p-2 d-flex flex-row align-items-center" onclick="window.location.href = '../Profile/profileAdmin.html'">
+                        <div class="col-1 d-flex flex-row justify-content-start align-items-center">
+                            <img src="../images/profile_blue.png" alt="">
+                        </div>
+                        <div class="col-10 d-flex flex-row align-items-center">
+                            <p class="ms-3">Profile</p>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-2 d-flex flex-row align-items-center" onclick="window.location.href = '../Profile/profileAdmin.html'">
+                        <div class="col-1 d-flex flex-row justify-content-start align-items-center">
+                            <img src="../icons/password_blue.png" alt="">
+                        </div>
+                        <div class="col-10 d-flex flex-row align-items-center">
+                            <p class="ms-3">Change Password</p>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-2 d-flex flex-row align-items-center" onclick="window.location.href = '../Settings/settings.html'">
+                        <div class="col-1 d-flex flex-row justify-content-start align-items-center">
+                            <img src="../images/settings_blue.png" alt="">
+                        </div>
+                        <div class="col-10 d-flex flex-row align-items-center">
+                            <p class="ms-3">Settings</p>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-2 d-flex flex-row align-items-center" onclick="window.location.href = '../Login/loginAdmin.html'">
+                        <div class="col-1 d-flex flex-row justify-content-start align-items-center">
+                            <img src="../icons/logout_blue.png" alt="">
+                        </div>
+                        <div class="col-10 d-flex flex-row align-items-center">
+                            <p class="ms-3">Logout</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 col-sm-8 m-0 p-2 notifications_container">
+            <p class="title ps-2">Notifications</p>
+            <div class="row notifications_wrapper m-0 p-0">
+                <p class="when m-0 mb-4 text">Today</p>
+                <div class="notification row m-0 p-0 mb-3 d-flex">
+                    <div class="col-9 d-flex justify-content-between align-items-center">
+                        <div class="notification_image p-0 d-flex justify-content-center align-items-center"><p class="m-0">H</p></div>
+                        <div class="notification_text p-0">
+                            <p class="m-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <p class="m-0">05 May, 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center">
+                        <img src="../icons/delete_FILL0_wght400_GRAD0_opsz48 (2).png" alt="">
+                    </div>
+                </div>
+                <div class="notification row m-0 p-0 mb-3 d-flex">
+                    <div class="col-9 d-flex justify-content-between align-items-center">
+                        <div class="notification_image p-0 d-flex justify-content-center align-items-center"><p class="m-0">H</p></div>
+                        <div class="notification_text p-0">
+                            <p class="m-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <p class="m-0">05 May, 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center">
+                        <img src="../icons/delete_FILL0_wght400_GRAD0_opsz48 (2).png" alt="">
+                    </div>
+                </div>
+                <div class="notification row m-0 p-0 mb-3 d-flex">
+                    <div class="col-9 d-flex justify-content-between align-items-center">
+                        <div class="notification_image p-0 d-flex justify-content-center align-items-center"><p class="m-0">H</p></div>
+                        <div class="notification_text p-0">
+                            <p class="m-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <p class="m-0">05 May, 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center">
+                        <img src="../icons/delete_FILL0_wght400_GRAD0_opsz48 (2).png" alt="">
+                    </div>
+                </div>
+                <div class="notification row m-0 p-0 mb-3 d-flex">
+                    <div class="col-9 d-flex justify-content-between align-items-center">
+                        <div class="notification_image p-0 d-flex justify-content-center align-items-center"><p class="m-0">H</p></div>
+                        <div class="notification_text p-0">
+                            <p class="m-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <p class="m-0">05 May, 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center">
+                        <img src="../icons/delete_FILL0_wght400_GRAD0_opsz48 (2).png" alt="">
+                    </div>
+                </div>
+                <div class="notification row m-0 p-0 mb-3 d-flex">
+                    <div class="col-9 d-flex justify-content-between align-items-center">
+                        <div class="notification_image p-0 d-flex justify-content-center align-items-center"><p class="m-0">H</p></div>
+                        <div class="notification_text p-0">
+                            <p class="m-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <p class="m-0">05 May, 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center">
+                        <img src="../icons/delete_FILL0_wght400_GRAD0_opsz48 (2).png" alt="">
+                    </div>
+                </div>
+                <div class="notification row m-0 p-0 mb-3 d-flex">
+                    <div class="col-9 d-flex justify-content-between align-items-center">
+                        <div class="notification_image p-0 d-flex justify-content-center align-items-center"><p class="m-0">H</p></div>
+                        <div class="notification_text p-0">
+                            <p class="m-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <p class="m-0">05 May, 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center">
+                        <img src="../icons/delete_FILL0_wght400_GRAD0_opsz48 (2).png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

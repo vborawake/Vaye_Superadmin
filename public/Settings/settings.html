@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="settings.css">
+    <link rel="stylesheet" href="../helper.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.1/chart.umd.js" integrity="sha512-ffRiucC+agltyOFQv5837tFGHFHq9tvevCk+mLE7pawA7SVgRS9TXFOT1bmHF8/aG/Pt7Bq7q94RSfuem/qKvw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="settings.js"></script>
+    <script defer src="../pagination.js"></script>
+    <title>Settings</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="offcanvas-start" id="toggle_sidebar">
+                <div class="offcanvas-body">
+                    <div class="col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-4 position-fixed top-0 start-0 h-100" id="sidebar">
+                        <div class="row d-flex justify-content-center align-items-center"><img src="../images/Logo.png" alt="" id="logo"></div>
+                        <div class="row d-flex flex-column justify-content-between" style="height: 86%;">
+                            <div class="d-flex flex-column w-100 mt-4" id="links">
+                                <a href="../Dashboard/dashboard.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/dashboard.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>Dashboard</p>
+                                    </div>
+                                </a>
+                                <a href="../Users/users.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/users_management.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>Users Management</p>
+                                    </div>
+                                </a>
+                                <a href="../Property/property.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/property_management.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>Property Management</p>
+                                    </div>
+                                </a>
+                                <a href="../Auctions/auctions.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/auction_management.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>Auctions Management</p>
+                                    </div>
+                                </a>
+                                <a href="../CMS/content.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/CMS.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>CMS</p>
+                                    </div>
+                                </a>
+                                <a href="../Billing/billing.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/credit_card.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>Billing</p>
+                                    </div>
+                                </a>
+                                <a href="../Report/report.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/report.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>Report</p>
+                                    </div>
+                                </a>
+                                <a href="../Support/support.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/support_management.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>Support Management</p>
+                                    </div>
+                                </a>
+                                <a href="../IM/instant_message.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/chat_blue.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>IM</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="d-flex flex-row" id="bottom_buttons">
+                                <div class="col-3 d-flex justify-content-center align-items-center" onclick="showNotifications(event)">
+                                    <img src="../images/notification.png" alt="">
+                                </div>
+                                <div class="col-3 d-flex justify-content-center align-items-center">
+                                    <img src="../images/security.png" alt="">
+                                </div>
+                                <div class="col-3 d-flex justify-content-center align-items-center">
+                                    <img src="../images/info.png" alt="">
+                                </div>
+                                <div class="col-3 d-flex justify-content-center align-items-center">
+                                    <img src="../images/language.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-10 col-xl-10 col-lg-9 col-md-9 col-sm-8 p-0 m-0" id="content">
+                <div class="row d-flex flex-row align-items-center justify-content-between w-100 m-0" id="header">
+                    <div class="col-8 d-flex flex-row align-items-center">
+                        <div class="navbar navbar-dark">
+                            <div class="container-fluid">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#toggle_sidebar" aria-controls="toggle_sidebar" aria-expanded="false">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="m-0">Settings</p>
+                    </div>
+                    <div class="col-4 d-flex flex-row justify-content-end align-items-center pe-4" id="user">
+                        <img src="../icons/search_white.png" alt="search" class="me-4">
+                        <img src="../icons/delimitation-land-plots-concept.png" alt="" class="rounded-circle me-4">
+                        <p class="m-0">John</p>
+                    </div>
+                </div>
+                <div class="row m-0 p-4">
+                    <div class="m-0 p-0" id="settings_content">
+                        <div class="row d-flex flex-row justify-content-between align-items-center m-0 p-0 mb-3 stagger" id="main_content_header">
+                            <div class="col-6 p-0" id="main_content_header_left">
+                                <p class="m-0">Settings</p>
+                            </div>
+                        </div>
+                        <div class="col-11 m-0 p-0 d-flex justify-content-between mt-4">
+                            <div class="col-6 m-0" style="padding-right: 4rem;">
+                                <div class="settings_box p-3 m-0 d-flex flex-column justify-content-between">
+                                    <div class="m-0 p-0">
+                                        <p>Notifications</p>
+                                        <p>Send Push Notification, email or SMS to all the users & subscribers.</p>
+                                    </div>
+                                    <button onclick="changeScreen(event)">Notification Settings</button>
+                                </div>
+                            </div>
+                            <div class="col-6 m-0" style="padding-right: 4rem;">
+                                <div class="settings_box p-3 m-0 d-flex flex-column justify-content-between">
+                                    <div class="m-0 p-0 flex-grow-1">
+                                        <p>Add Account Roles</p>
+                                        <div class="row d-flex flex-column m-0 p-0 flex-grow-1 users_container">
+                                            <div class="user d-flex m-0 p-0">
+                                                <div class="col-2 m-0 p-0 d-flex">
+                                                    <div class="image">
+                                                        <img src="../icons/delimitation-land-plots-concept.png" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-10 m-0 p-0">
+                                                    <p id="username">John</p>
+                                                    <p id="userrole">admin</p>
+                                                </div>
+                                            </div>
+                                            <div class="user d-flex m-0 p-0">
+                                                <div class="col-2 m-0 p-0 d-flex">
+                                                    <div class="image">
+                                                        <img src="../icons/delimitation-land-plots-concept.png" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-10 m-0 p-0">
+                                                    <p id="username">John</p>
+                                                    <p id="userrole">admin</p>
+                                                </div>
+                                            </div>
+                                            <div class="user d-flex m-0 p-0">
+                                                <div class="col-2 m-0 p-0 d-flex">
+                                                    <div class="image">
+                                                        <img src="../icons/delimitation-land-plots-concept.png" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-10 m-0 p-0">
+                                                    <p id="username">John</p>
+                                                    <p id="userrole">admin</p>
+                                                </div>
+                                            </div>
+                                            <div class="user d-flex m-0 p-0">
+                                                <div class="col-2 m-0 p-0 d-flex">
+                                                    <div class="image">
+                                                        <img src="../icons/delimitation-land-plots-concept.png" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-10 m-0 p-0">
+                                                    <p id="username">John</p>
+                                                    <p id="userrole">admin</p>
+                                                </div>
+                                            </div>
+                                            <div class="user d-flex m-0 p-0">
+                                                <div class="col-2 m-0 p-0 d-flex">
+                                                    <div class="image">
+                                                        <img src="../icons/delimitation-land-plots-concept.png" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-10 m-0 p-0">
+                                                    <p id="username">John</p>
+                                                    <p id="userrole">admin</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button>Add People</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row tab-content m-0 p-0 mt-4" id="table_container">
+                            <p class="py-3 m-0" id="table_heading">List Of Account Users</p>
+                            <div class="tab-pane fade show active m-0 p-0">
+                                <div class="row m-0 p-0 d-flex justify-content-between align-items-center" id="table_header">
+                                    <p class="col-1 text-center">#</p>
+                                    <p class="col-2">Name</p>
+                                    <p class="col-3 text-center">Email</p>
+                                    <p class="col-3 text-center">Role</p>
+                                    <p class="col-1 text-center">Action</p>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0 py-2 d-flex justify-content-between align-items-center" id="table_value">
+                                <p class="col-1 text-center">1</p>
+                                <p class="col-2">John</p>
+                                <p class="col-3 text-center">john@gmail.com</p>
+                                <p class="col-3 text-center">Operator</p>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <p class="m-0 danger">Remove</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-0 p-0" id="notification_settings_content" style="display: none !important;">
+                        <div class="row d-flex flex-row justify-content-between align-items-center m-0 p-0 mb-3 stagger" id="main_content_header">
+                            <div class="col-6 p-0" id="main_content_header_left" onclick="changeScreen(event)" style="cursor: pointer;">
+                                <p class="m-0">Back &gt; Notification Settings</p>
+                            </div>
+                        </div>
+                        <div class="col-11 m-0 p-0 d-flex justify-content-between mt-4">
+                            <div class="col-5 m-0 p-0" id="push_notifications">
+                                <p>Push Notification</p>
+                                <div class="d-flex m-0 p-0 align-items-center">
+                                    <input type="checkbox" class="me-3">
+                                    <p class="m-0">Send Push notification to everyone</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-11 notifications_settings row mt-4">
+                            <div class="input d-flex-flex-column mb-4 p-0">
+                                <p>Notification Title</p>
+                                <input type="text" placeholder="Title">
+                            </div>
+                            <div class="input d-flex-flex-column mb-4 p-0">
+                                <p>Notification Message</p>
+                                <input type="text" placeholder="Message">
+                            </div>
+                            <div class="input d-flex-flex-column mb-4 p-0">
+                                <p>Notification Icon/Image</p>
+                                <div class=".col-5 d-flex flex-row align-items-end m-0 p-0">
+                                    <div class="image me-4 p-0">
+                                        <img src="../icons/delimitation-land-plots-concept.png" alt="">
+                                    </div>
+                                    <div class="file_select position-relative">
+                                        <input type="text">
+                                        <div class="position-absolute top-0 bottom-0 p-0" style="margin: auto 0; right: 1rem;">
+                                            <img src="../images/file_download_black.png" alt="">
+                                            <input type="file" class="position-absolute">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button>Send Immediately</button>
+                        </div>
+                        <div class="row m-0 p-0 mt-4" id="checkbox_content">
+                            <div class="checkbox d-flex m-0 p-0 mb-3">
+                                <input type="checkbox">
+                                <p>Send Push notification to Buyers only.</p>
+                            </div>
+                            <div class="checkbox d-flex m-0 p-0 mb-3">
+                                <input type="checkbox">
+                                <p>Send Push notification to Sellers only.</p>
+                            </div>
+                            <div class="checkbox d-flex m-0 p-0 mb-3">
+                                <input type="checkbox">
+                                <p>Send Push notification to Verificators only.</p>
+                            </div>
+                            <div class="checkbox d-flex m-0 p-0 mb-3">
+                                <input type="checkbox">
+                                <p>Send Push notification to Authenticators only.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-5 col-sm-6 d-flex flex-column rounded position-absolute p-0" id="nav_menu">
+                    <div class="row m-0 p-2 d-flex flex-row align-items-center" onclick="window.location.href = '../Profile/profileAdmin.html'">
+                        <div class="col-1 d-flex flex-row justify-content-start align-items-center">
+                            <img src="../images/profile_blue.png" alt="">
+                        </div>
+                        <div class="col-10 d-flex flex-row align-items-center">
+                            <p class="ms-3">Profile</p>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-2 d-flex flex-row align-items-center" onclick="window.location.href = '../Profile/profileAdmin.html'">
+                        <div class="col-1 d-flex flex-row justify-content-start align-items-center">
+                            <img src="../icons/password_blue.png" alt="">
+                        </div>
+                        <div class="col-10 d-flex flex-row align-items-center">
+                            <p class="ms-3">Change Password</p>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-2 d-flex flex-row align-items-center" onclick="window.location.href = '../Settings/settings.html'">
+                        <div class="col-1 d-flex flex-row justify-content-start align-items-center">
+                            <img src="../images/settings_blue.png" alt="">
+                        </div>
+                        <div class="col-10 d-flex flex-row align-items-center">
+                            <p class="ms-3">Settings</p>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-2 d-flex flex-row align-items-center" onclick="window.location.href = '../Login/loginAdmin.html'">
+                        <div class="col-1 d-flex flex-row justify-content-start align-items-center">
+                            <img src="../icons/logout_blue.png" alt="">
+                        </div>
+                        <div class="col-10 d-flex flex-row align-items-center">
+                            <p class="ms-3">Logout</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup m-0 w-50 p-0 position-fixed" style="left: 25%; display: none;">
+                <div class="row popup_header p-3 m-0">
+                    <div class="popup_header-left col-6 d-flex align-items-center">
+                        <p>Add User Role</p>
+                    </div>
+                    <div class="popup_header-right col-6 d-flex align-items-center justify-content-end">
+                        <img src="../images/close_white.png" alt="close">
+                    </div>
+                </div>
+                <div class="popup_content p-3 m-0">
+                    <p class="mb-3">Send invitation through email</p>
+                    <div class="d-flex justify-content-between m-0 p-0 inputs">
+                        <input type="text" placeholder="Enter Email">
+                        <div class="dropdown_container m-0 p-0" style="width: 45%;">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle d-flex justify-content-start" type="button" data-bs-toggle="dropdown" aria-expanded="false">Operator</button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#" class="dropdown-item">Operator</a></li>
+                                    <li><a href="#" class="dropdown-item">Active</a></li>
+                                    <li><a href="#" class="dropdown-item">New</a></li>
+                                    <li><a href="#" class="dropdown-item">Old</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="my-3 px-4">
+                        <li>Super-Admin: Super Admins can access and manage all features and settings.</li>
+                        <li>Operator: Operator can manage users,property,etc.</li>
+                    </ul>
+                    <div class="d-flex justify-content-end m-0 p-0 buttons">
+                        <button class="me-3">Cancel</button>
+                        <button>Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 col-sm-8 m-0 p-2 notifications_container">
+            <p class="title ps-2">Notifications</p>
+            <div class="row notifications_wrapper m-0 p-0">
+                <p class="when m-0 mb-4 text">Today</p>
+                <div class="notification row m-0 p-0 mb-3 d-flex">
+                    <div class="col-9 d-flex justify-content-between align-items-center">
+                        <div class="notification_image p-0 d-flex justify-content-center align-items-center"><p class="m-0">H</p></div>
+                        <div class="notification_text p-0">
+                            <p class="m-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <p class="m-0">05 May, 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center">
+                        <img src="../icons/delete_FILL0_wght400_GRAD0_opsz48 (2).png" alt="">
+                    </div>
+                </div>
+                <div class="notification row m-0 p-0 mb-3 d-flex">
+                    <div class="col-9 d-flex justify-content-between align-items-center">
+                        <div class="notification_image p-0 d-flex justify-content-center align-items-center"><p class="m-0">H</p></div>
+                        <div class="notification_text p-0">
+                            <p class="m-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <p class="m-0">05 May, 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center">
+                        <img src="../icons/delete_FILL0_wght400_GRAD0_opsz48 (2).png" alt="">
+                    </div>
+                </div>
+                <div class="notification row m-0 p-0 mb-3 d-flex">
+                    <div class="col-9 d-flex justify-content-between align-items-center">
+                        <div class="notification_image p-0 d-flex justify-content-center align-items-center"><p class="m-0">H</p></div>
+                        <div class="notification_text p-0">
+                            <p class="m-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <p class="m-0">05 May, 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center">
+                        <img src="../icons/delete_FILL0_wght400_GRAD0_opsz48 (2).png" alt="">
+                    </div>
+                </div>
+                <div class="notification row m-0 p-0 mb-3 d-flex">
+                    <div class="col-9 d-flex justify-content-between align-items-center">
+                        <div class="notification_image p-0 d-flex justify-content-center align-items-center"><p class="m-0">H</p></div>
+                        <div class="notification_text p-0">
+                            <p class="m-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <p class="m-0">05 May, 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center">
+                        <img src="../icons/delete_FILL0_wght400_GRAD0_opsz48 (2).png" alt="">
+                    </div>
+                </div>
+                <div class="notification row m-0 p-0 mb-3 d-flex">
+                    <div class="col-9 d-flex justify-content-between align-items-center">
+                        <div class="notification_image p-0 d-flex justify-content-center align-items-center"><p class="m-0">H</p></div>
+                        <div class="notification_text p-0">
+                            <p class="m-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <p class="m-0">05 May, 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center">
+                        <img src="../icons/delete_FILL0_wght400_GRAD0_opsz48 (2).png" alt="">
+                    </div>
+                </div>
+                <div class="notification row m-0 p-0 mb-3 d-flex">
+                    <div class="col-9 d-flex justify-content-between align-items-center">
+                        <div class="notification_image p-0 d-flex justify-content-center align-items-center"><p class="m-0">H</p></div>
+                        <div class="notification_text p-0">
+                            <p class="m-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <p class="m-0">05 May, 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center">
+                        <img src="../icons/delete_FILL0_wght400_GRAD0_opsz48 (2).png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

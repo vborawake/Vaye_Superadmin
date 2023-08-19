@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="property.css">
+    <link rel="stylesheet" href="../helper.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.1/chart.umd.js" integrity="sha512-ffRiucC+agltyOFQv5837tFGHFHq9tvevCk+mLE7pawA7SVgRS9TXFOT1bmHF8/aG/Pt7Bq7q94RSfuem/qKvw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="property.js"></script>
+    <script defer src="../pagination.js"></script>
+    <title>Property Management</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="offcanvas-start" id="toggle_sidebar">
+                <div class="offcanvas-body">
+                    <div class="col-xxl-2 col-xl-2 col-lg-3 col-md-3 col-sm-4 position-fixed top-0 start-0 h-100" id="sidebar">
+                        <div class="row d-flex justify-content-center align-items-center"><img src="../images/Logo.png" alt="" id="logo"></div>
+                        <div class="row d-flex flex-column justify-content-between" style="height: 86%;">
+                            <div class="d-flex flex-column w-100 mt-4" id="links">
+                                <a href="../Dashboard/dashboardAdmin.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/dashboard.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>Dashboard</p>
+                                    </div>
+                                </a>
+                                <a href="../Users/users.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/users_management.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>Users Management</p>
+                                    </div>
+                                </a>
+                                <a href="../Property/property.html" class="row active d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/property_management.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>Property Management</p>
+                                    </div>
+                                </a>
+                                <a href="../Auctions/auctions.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/auction_management.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>Auctions Management</p>
+                                    </div>
+                                </a>
+                                <a href="../CMS/content.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/CMS.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>CMS</p>
+                                    </div>
+                                </a>
+                                <a href="../Billing/billing.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/credit_card.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>Billing</p>
+                                    </div>
+                                </a>
+                                <a href="../Report/report.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/report.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>Report</p>
+                                    </div>
+                                </a>
+                                <a href="../Support/support.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/support_management.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>Support Management</p>
+                                    </div>
+                                </a>
+                                <a href="../IM/instant_messageAdmin.html" class="row d-flex flex-row align-items-center p-2 m-0" id="link">
+                                    <div class="col-3">
+                                        <img src="../images/chat_blue.png" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <p>IM</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="d-flex flex-row" id="bottom_buttons">
+                                <div class="col-3 d-flex justify-content-center align-items-center" onclick="showNotifications(event)">
+                                    <img src="../images/notification.png" alt="">
+                                </div>
+                                <div class="col-3 d-flex justify-content-center align-items-center">
+                                    <img src="../images/security.png" alt="">
+                                </div>
+                                <div class="col-3 d-flex justify-content-center align-items-center">
+                                    <img src="../images/info.png" alt="">
+                                </div>
+                                <div class="col-3 d-flex justify-content-center align-items-center">
+                                    <img src="../images/language.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-10 col-xl-10 col-lg-9 col-md-9 col-sm-8 p-0 m-0" id="content">
+                <div class="row d-flex flex-row align-items-center justify-content-between w-100 m-0" id="header">
+                    <div class="col-8 d-flex flex-row align-items-center">
+                        <div class="navbar navbar-dark">
+                            <div class="container-fluid">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#toggle_sidebar" aria-controls="toggle_sidebar" aria-expanded="false">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="m-0">Property Management</p>
+                    </div>
+                    <div class="col-4 d-flex flex-row justify-content-end align-items-center pe-4" id="user">
+                        <img src="../icons/search_white.png" alt="search" class="me-4">
+                        <img src="../icons/delimitation-land-plots-concept.png" alt="" class="rounded-circle me-4">
+                        <p class="m-0">John</p>
+                    </div>
+                </div>
+                <div class="row m-0 p-4">
+                    <div class="row d-flex flex-row justify-content-between align-items-center m-0 p-0 mb-3 stagger" id="main_content_header">
+                        <div class="col-6 p-0" id="main_content_header_left">
+                            <p class="m-0">List of Land Property</p>
+                        </div>
+                        <div class="col-6 p-0 d-flex justify-content-end" id="main_content_header_right">
+                            <input type="text" class="p-2" placeholder="Search">
+                            <img src="../icons/search_gray.png" alt="">
+                        </div>
+                    </div>
+                    <div class="nav nav-underline mb-3">
+                        <li class="nav-item"><a href="#localization" class="nav-link active" data-bs-toggle="tab" data-bs-target="#localization" aria-controls="localization">Localization Requests</a></li>
+                        <li class="nav-item"><a href="#verification" class="nav-link" data-bs-toggle="tab" data-bs-target="#verification" aria-controls="verification">Verification Requests</a></li>
+                        <li class="nav-item"><a href="#authentication" class="nav-link" data-bs-toggle="tab" data-bs-target="#authentication" aria-controls="authentication">Authentication Requests</a></li>
+                    </div>
+                    <div class="row tab-content m-0 p-0 mt-4" id="table_container">
+                        <div class="tab-pane fade show active m-0 p-0" id="localization">
+                            <div class="row m-0 p-0 d-flex justify-content-between align-items-center" id="table_header">
+                                <p class="col-2 text-center">Property ID</p>
+                                <p class="col-2">Location</p>
+                                <p class="col-1 text-center">Request By</p>
+                                <p class="col-2 text-center">Physical Inspection?</p>
+                                <p class="col-2 text-center">Property Listed</p>
+                                <p class="col-1 text-center">Action</p>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                                <p class="col-2 text-center">HG1254632</p>
+                                <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
+                                <p class="col-1 text-center">Mathew</p>
+                                <p class="col-2 text-center">Yes</p>
+                                <p class="col-2 text-center">Verified</p>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'localization_open')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                                <p class="col-2 text-center">HG1254632</p>
+                                <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
+                                <p class="col-1 text-center">Mathew</p>
+                                <p class="col-2 text-center">Yes</p>
+                                <p class="col-2 text-center">Verified</p>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'localization_open')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                                <p class="col-2 text-center">HG1254632</p>
+                                <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
+                                <p class="col-1 text-center">Mathew</p>
+                                <p class="col-2 text-center">Yes</p>
+                                <p class="col-2 text-center">Verified</p>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'localization_open')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                                <p class="col-2 text-center">HG1254632</p>
+                                <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
+                                <p class="col-1 text-center">Mathew</p>
+                                <p class="col-2 text-center">Yes</p>
+                                <p class="col-2 text-center">Verified</p>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'localization_open')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                                <p class="col-2 text-center">HG1254632</p>
+                                <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
+                                <p class="col-1 text-center">Mathew</p>
+                                <p class="col-2 text-center">Yes</p>
+                                <p class="col-2 text-center">Verified</p>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'localization_open')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                                <p class="col-2 text-center">HG1254632</p>
+                                <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
+                                <p class="col-1 text-center">Mathew</p>
+                                <p class="col-2 text-center">Yes</p>
+                                <p class="col-2 text-center">Verified</p>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'localization_open')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade m-0 p-0" id="verification">
+                            <div class="row m-0 p-0 d-flex justify-content-between align-items-center" id="table_header">
+                                <p class="col-2 text-center">Property ID</p>
+                                <p class="col-2">Location</p>
+                                <p class="col-1 text-center">Request By</p>
+                                <p class="col-2 text-center">User Type</p>
+                                <p class="col-2 text-center">Request report</p>
+                                <p class="col-1 text-center">Action</p>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                                <p class="col-2 text-center">HG1254632</p>
+                                <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
+                                <p class="col-1 text-center">Mathew</p>
+                                <p class="col-2 text-center">Buyer</p>
+                                <a href="#" class="col-2 text-center">Click here</a>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'verification_open')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                                <p class="col-2 text-center">HG1254632</p>
+                                <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
+                                <p class="col-1 text-center">Mathew</p>
+                                <p class="col-2 text-center">Buyer</p>
+                                <a href="#" class="col-2 text-center">Click here</a>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'verification_open')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                                <p class="col-2 text-center">HG1254632</p>
+                                <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
+                                <p class="col-1 text-center">Mathew</p>
+                                <p class="col-2 text-center">Buyer</p>
+                                <a href="#" class="col-2 text-center">Click here</a>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'verification_open')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                                <p class="col-2 text-center">HG1254632</p>
+                                <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
+                                <p class="col-1 text-center">Mathew</p>
+                                <p class="col-2 text-center">Buyer</p>
+                                <div class="m-0 p-0 col-2 text-center">
+                                    <p>Already Received</p>
+                                    <a href="#">Download</a>
+                                </div>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'verification_open')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                                <p class="col-2 text-center">HG1254632</p>
+                                <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
+                                <p class="col-1 text-center">Mathew</p>
+                                <p class="col-2 text-center">Buyer</p>
+                                <div class="m-0 p-0 col-2 text-center">
+                                    <p>Already Received</p>
+                                    <a href="#">Download</a>
+                                </div>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'verification_open')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                                <p class="col-2 text-center">HG1254632</p>
+                                <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
+                                <p class="col-1 text-center">Mathew</p>
+                                <p class="col-2 text-center">Buyer</p>
+                                <div class="m-0 p-0 col-2 text-center">
+                                    <p>Already Received</p>
+                                    <a href="#">Download</a>
+                                </div>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'verification_open')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade m-0 p-0" id="authentication">
+                            <div class="row m-0 p-0 d-flex justify-content-between align-items-center" id="table_header">
+                                <p class="col-2 text-center">Property ID</p>
+                                <p class="col-2">Location</p>
+                                <p class="col-1 text-center">Request By</p>
+                                <p class="col-2 text-center">User Type</p>
+                                <p class="col-2 text-center">Status</p>
+                                <p class="col-1 text-center">Action</p>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                                <p class="col-2 text-center">HG1254632</p>
+                                <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
+                                <p class="col-1 text-center">Mathew</p>
+                                <p class="col-2 text-center">Buyer</p>
+                                <p class="col-2 text-center success">Paid</p>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'authentication_open')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                                <p class="col-2 text-center">HG1254632</p>
+                                <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
+                                <p class="col-1 text-center">Mathew</p>
+                                <p class="col-2 text-center">Buyer</p>
+                                <p class="col-2 text-center danger">Unpaid</p>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'authentication_open')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                                <p class="col-2 text-center">HG1254632</p>
+                                <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
+                                <p class="col-1 text-center">Mathew</p>
+                                <p class="col-2 text-center">Buyer</p>
+                                <p class="col-2 text-center success">Paid</p>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'authentication_open')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                                <p class="col-2 text-center">HG1254632</p>
+                                <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
+                                <p class="col-1 text-center">Mathew</p>
+                                <p class="col-2 text-center">Buyer</p>
+                                <p class="col-2 text-center danger">Unpaid</p>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'authentication_open')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                                <p class="col-2 text-center">HG1254632</p>
+                                <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
+                                <p class="col-1 text-center">Mathew</p>
+                                <p class="col-2 text-center">Buyer</p>
+                                <p class="col-2 text-center success">Paid</p>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'authentication_open')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                                <p class="col-2 text-center">HG1254632</p>
+                                <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
+                                <p class="col-1 text-center">Mathew</p>
+                                <p class="col-2 text-center">Buyer</p>
+                                <p class="col-2 text-center danger">Unpaid</p>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'authentication_open')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-5 col-sm-6 d-flex flex-column rounded position-absolute p-0" id="nav_menu">
+                    <div class="row m-0 p-2 d-flex flex-row align-items-center" onclick="window.location.href = '../Profile/profileAdmin.html'">
+                        <div class="col-1 d-flex flex-row justify-content-start align-items-center">
+                            <img src="../images/profile_blue.png" alt="">
+                        </div>
+                        <div class="col-10 d-flex flex-row align-items-center">
+                            <p class="ms-3">Profile</p>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-2 d-flex flex-row align-items-center" onclick="window.location.href = '../Profile/profileAdmin.html'">
+                        <div class="col-1 d-flex flex-row justify-content-start align-items-center">
+                            <img src="../icons/password_blue.png" alt="">
+                        </div>
+                        <div class="col-10 d-flex flex-row align-items-center">
+                            <p class="ms-3">Change Password</p>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-2 d-flex flex-row align-items-center" onclick="window.location.href = '../Settings/settings.html'">
+                        <div class="col-1 d-flex flex-row justify-content-start align-items-center">
+                            <img src="../images/settings_blue.png" alt="">
+                        </div>
+                        <div class="col-10 d-flex flex-row align-items-center">
+                            <p class="ms-3">Settings</p>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-2 d-flex flex-row align-items-center" onclick="window.location.href = '../Login/loginAdmin.html'">
+                        <div class="col-1 d-flex flex-row justify-content-start align-items-center">
+                            <img src="../icons/logout_blue.png" alt="">
+                        </div>
+                        <div class="col-10 d-flex flex-row align-items-center">
+                            <p class="ms-3">Logout</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 col-sm-8 m-0 p-2 notifications_container">
+            <p class="title ps-2">Notifications</p>
+            <div class="row notifications_wrapper m-0 p-0">
+                <p class="when m-0 mb-4 text">Today</p>
+                <div class="notification row m-0 p-0 mb-3 d-flex">
+                    <div class="col-9 d-flex justify-content-between align-items-center">
+                        <div class="notification_image p-0 d-flex justify-content-center align-items-center"><p class="m-0">H</p></div>
+                        <div class="notification_text p-0">
+                            <p class="m-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <p class="m-0">05 May, 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center">
+                        <img src="../icons/delete_FILL0_wght400_GRAD0_opsz48 (2).png" alt="">
+                    </div>
+                </div>
+                <div class="notification row m-0 p-0 mb-3 d-flex">
+                    <div class="col-9 d-flex justify-content-between align-items-center">
+                        <div class="notification_image p-0 d-flex justify-content-center align-items-center"><p class="m-0">H</p></div>
+                        <div class="notification_text p-0">
+                            <p class="m-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <p class="m-0">05 May, 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center">
+                        <img src="../icons/delete_FILL0_wght400_GRAD0_opsz48 (2).png" alt="">
+                    </div>
+                </div>
+                <div class="notification row m-0 p-0 mb-3 d-flex">
+                    <div class="col-9 d-flex justify-content-between align-items-center">
+                        <div class="notification_image p-0 d-flex justify-content-center align-items-center"><p class="m-0">H</p></div>
+                        <div class="notification_text p-0">
+                            <p class="m-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <p class="m-0">05 May, 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center">
+                        <img src="../icons/delete_FILL0_wght400_GRAD0_opsz48 (2).png" alt="">
+                    </div>
+                </div>
+                <div class="notification row m-0 p-0 mb-3 d-flex">
+                    <div class="col-9 d-flex justify-content-between align-items-center">
+                        <div class="notification_image p-0 d-flex justify-content-center align-items-center"><p class="m-0">H</p></div>
+                        <div class="notification_text p-0">
+                            <p class="m-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <p class="m-0">05 May, 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center">
+                        <img src="../icons/delete_FILL0_wght400_GRAD0_opsz48 (2).png" alt="">
+                    </div>
+                </div>
+                <div class="notification row m-0 p-0 mb-3 d-flex">
+                    <div class="col-9 d-flex justify-content-between align-items-center">
+                        <div class="notification_image p-0 d-flex justify-content-center align-items-center"><p class="m-0">H</p></div>
+                        <div class="notification_text p-0">
+                            <p class="m-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <p class="m-0">05 May, 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center">
+                        <img src="../icons/delete_FILL0_wght400_GRAD0_opsz48 (2).png" alt="">
+                    </div>
+                </div>
+                <div class="notification row m-0 p-0 mb-3 d-flex">
+                    <div class="col-9 d-flex justify-content-between align-items-center">
+                        <div class="notification_image p-0 d-flex justify-content-center align-items-center"><p class="m-0">H</p></div>
+                        <div class="notification_text p-0">
+                            <p class="m-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <p class="m-0">05 May, 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center">
+                        <img src="../icons/delete_FILL0_wght400_GRAD0_opsz48 (2).png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup m-0 w-50 p-0 position-fixed" id="localization_popup" style="left: 25%; display: none;">
+            <div class="row popup_header p-3 m-0">
+                <div class="popup_header-left col-6 d-flex align-items-center">
+                    <p>Details</p>
+                </div>
+                <div class="popup_header-right col-6 d-flex align-items-center justify-content-end" onclick="showPopup(event, 'localization_close')">
+                    <img src="../images/close_white.png" alt="close">
+                </div>
+            </div>
+            <div class="popup_content p-3 m-0">
+                <div class="row d-sm-flex flex-sm-column flex-md-row m-0 p-0">
+                    <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Property ID</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">HG1254632</p>
+                        </div>
+                    </div>
+                    <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Property Name</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">Corner land</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-sm-flex flex-sm-column flex-md-row m-0 p-0">
+                    <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Location</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">Covington, TX, 76636, Hill County</p>
+                        </div>
+                    </div>
+                    <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Request By</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">Mathew</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-sm-flex flex-sm-column flex-md-row m-0 p-0">
+                    <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Type</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">Buyer</p>
+                        </div>
+                    </div>
+                    <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Email</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">mathew@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-sm-flex flex-sm-column flex-md-row m-0 p-0">
+                    <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Phone Number</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">8989898989</p>
+                        </div>
+                    </div>
+                    <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Property Listed</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">Non Verified</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-sm-flex flex-sm-column flex-md-row m-0 p-0">
+                    <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Price</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">XAF 2560000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-12 m-0 p-0 d-flex flex-row justify-content-end align-items-center">
+                        <div class="m-0 p-0">
+                            <button class="d-flex me-4 flex-row align-items-center justify-content-center delete">
+                                <img src="../images/delete.png" alt="Delete">
+                                Delete
+                            </button>
+                        </div>
+                        <div class="m-0 p-0">
+                            <button class="d-flex flex-row align-items-center justify-content-center edit">
+                                <img src="../images/edit_white.png" alt="Delete">
+                                Edit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup m-0 w-50 p-0 position-fixed" id="verification_popup" style="left: 25%; display: none;">
+            <div class="row popup_header p-3 m-0">
+                <div class="popup_header-left col-6 d-flex align-items-center">
+                    <p>Details</p>
+                </div>
+                <div class="popup_header-right col-6 d-flex align-items-center justify-content-end" onclick="showPopup(event, 'verification_close')">
+                    <img src="../images/close_white.png" alt="close">
+                </div>
+            </div>
+            <div class="popup_content p-3 m-0">
+                <div class="row m-0 p-0">
+                    <div class="col-6 m-0 p-0 d-flex flex-lg-row flex-md-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Property ID</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">HG1254632</p>
+                        </div>
+                    </div>
+                    <div class="col-6 m-0 p-0 d-flex flex-lg-row flex-md-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Property Name</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">Corner land</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-6 m-0 p-0 d-flex flex-lg-row flex-md-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Location</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">Covington, TX, 76636, Hill County</p>
+                        </div>
+                    </div>
+                    <div class="col-6 m-0 p-0 d-flex flex-lg-row flex-md-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Request By</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">Mathew</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-6 m-0 p-0 d-flex flex-lg-row flex-md-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Type</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">Buyer</p>
+                        </div>
+                    </div>
+                    <div class="col-6 m-0 p-0 d-flex flex-lg-row flex-md-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Email</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">mathew@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-6 m-0 p-0 d-flex flex-lg-row flex-md-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Phone Number</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">8989898989</p>
+                        </div>
+                    </div>
+                    <div class="col-6 m-0 p-0 d-flex flex-lg-row flex-md-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Property Listed</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">Non Verified</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-6 m-0 p-0 d-flex flex-lg-row flex-md-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Price</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">XAF 2560000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-12 m-0 p-0 d-flex flex-row justify-content-end align-items-center">
+                        <div class="m-0 p-0">
+                            <button class="d-flex me-4 flex-row align-items-center justify-content-center request">
+                                Request
+                            </button>
+                        </div>
+                        <div class="m-0 p-0">
+                            <button class="d-flex me-4 flex-row align-items-center justify-content-center delete">
+                                <img src="../images/delete.png" alt="Delete">
+                                Delete
+                            </button>
+                        </div>
+                        <div class="m-0 p-0">
+                            <button class="d-flex flex-row align-items-center justify-content-center edit">
+                                <img src="../images/edit_white.png" alt="Delete">
+                                Edit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup m-0 w-50 p-0 position-fixed" id="authentication_popup" style="left: 25%; display: none;">
+            <div class="row popup_header p-3 m-0">
+                <div class="popup_header-left col-6 d-flex align-items-center">
+                    <p>Details</p>
+                </div>
+                <div class="popup_header-right col-6 d-flex align-items-center justify-content-end" onclick="showPopup(event, 'authentication_close')">
+                    <img src="../images/close_white.png" alt="close">
+                </div>
+            </div>
+            <div class="popup_content p-3 m-0">
+                <div class="row m-0 p-0">
+                    <div class="col-6 m-0 p-0 d-flex flex-xl-row flex-sm-column flex-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Property ID</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">HG1254632</p>
+                        </div>
+                    </div>
+                    <div class="col-6 m-0 p-0 d-flex flex-xl-row flex-sm-column flex-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Property Name</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">Corner land</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-6 m-0 p-0 d-flex flex-xl-row flex-sm-column flex-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Location</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">Covington, TX, 76636, Hill County</p>
+                        </div>
+                    </div>
+                    <div class="col-6 m-0 p-0 d-flex flex-xl-row flex-sm-column flex-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Request By</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">Mathew</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-6 m-0 p-0 d-flex flex-xl-row flex-sm-column flex-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Type</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">Buyer</p>
+                        </div>
+                    </div>
+                    <div class="col-6 m-0 p-0 d-flex flex-xl-row flex-sm-column flex-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Email</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">mathew@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-6 m-0 p-0 d-flex flex-xl-row flex-sm-column flex-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Phone Number</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">8989898989</p>
+                        </div>
+                    </div>
+                    <div class="col-6 m-0 p-0 d-flex flex-xl-row flex-sm-column flex-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Property Listed</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">Non Verified</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-6 m-0 p-0 d-flex flex-xl-row flex-sm-column flex-column align-items-center">
+                        <div class="col-6 m-0 p-0">
+                            <p class="field m-0">Price</p>
+                        </div>
+                        <div class="col-6 m-0 p-0">
+                            <p class="m-0">XAF 2560000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-12 m-0 p-0 d-flex flex-xl-row justify-content-end align-items-center">
+                        <div class="m-0 p-0">
+                            <button class="d-flex me-4 flex-xl-row align-items-center justify-content-center request">
+                                Request
+                            </button>
+                        </div>
+                        <div class="m-0 p-0">
+                            <button class="d-flex me-4 flex-xl-row align-items-center justify-content-center delete">
+                                <img src="../images/delete.png" alt="Delete">
+                                Delete
+                            </button>
+                        </div>
+                        <div class="m-0 p-0">
+                            <button class="d-flex flex-xl-row align-items-center justify-content-center edit">
+                                <img src="../images/edit_white.png" alt="Delete">
+                                Edit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

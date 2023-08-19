@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex_column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex_column_reverse {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.space_between {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.space_evenly {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.justify_center {
+    justify-content: center;
+}
+
+.justify_flex_start {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.justify_flex_end {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.center {
+    align-items: center;
+}
+
+.align_flex_start {
+    align-items: flex-start;
+    /* flex-wrap: wrap; */
+}
+
+.flex_row {
+    display: flex;
+}
+
+.flex_row_reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+    color: #FFF;
+}
+
+button {
+    border: none;
+    padding: 0.6rem 1rem;
+    background: #B83169;
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+input {
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+.width_full {
+    width: 100%;
+}
+
+.height_full {
+    height: 100%;
+}
+
+.mt4 {
+    margin: 4rem 0 0 0;
+}
+
+.container {
+    min-height: 100vh;
+    font-family: 'Nunito', 'sans-serif';
+    /* display: none; */
+    background: #FFF;
+    overflow: hidden;
+}
+
+.hamburger {
+    display: none;
+}
+
+.mobile_menu {
+    display: none;
+}
+
+.container .right_section {
+    position: relative;
+    height: 100vh;
+    width: 50%;
+    background: linear-gradient(310deg, #24BB52 0%, #24BB52 0%, #24BB52 0%, #09308B 64%, #0A3A97 94%, #2453AC 100%);
+}
+
+.container .right_section img:nth-child(1) {
+    position: absolute;
+    top: 5%;
+    left: 15%;
+    width: 45rem;
+    z-index: 1;
+}
+
+.container .right_section .design_element {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 45rem;
+    z-index: 3;
+}
+
+.container .left_section .content_wrapper {
+    position: relative;
+    z-index: 3;
+    width: 60%;
+    height: 80%;
+}
+
+.container .left_section .content_wrapper > img {
+    margin-bottom: 3rem;
+}
+
+.container .left_section h4 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 4rem 0;
+    color: #09338F;
+}
+
+.container .left_section .input {
+    position: relative;
+    margin: 0 0 2.5rem 0;
+    width: 80%;
+}
+
+.container .left_section .input img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.container .left_section .input:nth-child(4) {
+    margin: 0 0 1rem 0;
+}
+
+.container .left_section .input:nth-child(4) svg {
+    position: absolute;
+    right: -3rem;
+    bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.container .left_section .input input {
+    height: 2rem;
+    padding: 0.3rem;
+    color: #515151;
+    border-bottom: 2px solid #ABA8A8;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.container .left_section .input input::placeholder {
+    font-size: 1rem;
+    color: #19214F;
+}
+
+.container .left_section .input img {
+    width: 2rem;
+    height: 2rem;
+    margin: 0 1rem 0 0;
+}
+
+.container .left_section .input svg {
+    margin: 0 1.6rem 0 0;
+}
+
+.container .left_section .remember {
+    width: 70%;
+    margin: 0 0 3rem 3rem;
+}
+
+.container .left_section .remember a {
+    color: #464646;
+}
+
+.container .left_section .remember input {
+    width: 1.3rem;
+    height: 1.3rem;
+    margin: 0 1rem 0 0;
+}
+
+.container .left_section button {
+    width: 70%;
+    height: 3.5rem;
+    margin: 0 0 2rem 3rem;
+    background: #09338F;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 2rem;
+    color: #FFF;
+}
+
+.container .left_section > p {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.container .left_section > p a {
+    color: #00A962;
+    text-decoration: underline;
+    text-decoration-color: #00A962;
+}
+
+.container .left_section {
+    position: relative;
+    width: 50%;
+    height: 100vh;
+}
+
+.container .left_section .design_element {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container .right_section .content_wrapper button {
+        height: 2.7rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container .left_section {
+        width: 70%;
+    }
+
+    .container .left_section button {
+        height: 2.7rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container .left_section {
+        width: 90%;
+    }
+
+    .container .left_section button {
+        height: 2.7rem;
+        font-size: 1.1rem;
+    }
+
+    .container .right_section img:nth-child(1) {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -5rem;
+        margin: auto 0;
+        width: 35rem;
+        z-index: 1;
+    }
+    
+    .container .right_section .design_element {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        margin: auto 0;
+        width: 25rem;
+        z-index: 3;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container .left_section {
+        width: 100%;
+    }
+
+    .container .left_section button {
+        height: 2.7rem;
+        font-size: 1.1rem;
+    }
+
+    .container .right_section {
+        display: none;
+    }
+}
