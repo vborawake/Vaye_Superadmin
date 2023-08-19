@@ -9,7 +9,7 @@ const app = express();
 app.use(express.static(path.join(__dirName, 'public')));
 
 app.get('/', (req, res) => {
-    res.redirect('/Login/login.html');
+    res.redirect('/Login/loginAdmin.html');
 });
 
 app.listen(3000, () => {
