@@ -3,6 +3,24 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('toggle_sidebar').classList.add('offcanvas');
     }
 
+    if (localStorage.getItem('changePassword') === 'true') {
+        document.querySelector('#edit').style.display = 'none';
+        document.querySelector('#password').style.display = 'block';
+        document.querySelector('#edit #main_content_header button').innerHTML = 'Change Password';
+        document.querySelector('#edit #main_content_header p').innerHTML = 'Back > View Profile';
+        document.querySelector('.profile_picture').style.display = 'flex';
+        gsap.from(document.querySelector('.profile_picture'), {
+            y: '-2rem',
+            opacity: 0,
+            duration: 0.5
+        });
+        document.querySelectorAll('.input input').forEach(input => {
+            input.style.border = '2px solid #09338F';
+        });
+        document.querySelector('#button_update').style.display = 'block';
+        localStorage.removeItem('changePassword');
+    }
+
     addAnimations();
 });
 

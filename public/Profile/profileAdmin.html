@@ -113,7 +113,7 @@
                 </div>
             </div>
             <div class="col-xxl-10 col-xl-10 col-lg-9 col-md-9 col-sm-8 p-0 m-0" id="content">
-                <div class="row d-flex flex-row align-items-center justify-content-between w-100 m-0" id="header">
+                <div class="row d-flex flex-row align-items-center justify-content-between w-100 m-0" id="header" onclick="gsap.to(document.querySelector('.search_bar'), { scaleX: 0, duration: 0.5 }); document.querySelector('.search_bar input').value = ''">
                     <div class="col-8 d-flex flex-row align-items-center">
                         <div class="navbar navbar-dark">
                             <div class="container-fluid">
@@ -125,43 +125,12 @@
                         <p class="m-0">Profile</p>
                     </div>
                     <div class="col-4 d-flex flex-row justify-content-end align-items-center pe-4" id="user">
-                        <img src="../icons/search_white.png" alt="search" class="me-4" onclick="showMenu(event)">
+                        <div class="m-0 me-4 p-0 search_bar" onclick="event.stopPropagation();">
+                            <input type="text" placeholder="Search">
+                        </div>
+                        <img src="../icons/search_white.png" alt="search" class="me-4" onclick="event.stopPropagation(); gsap.to(event.currentTarget.previousElementSibling, { scaleX: 1, duration: 0.5 })">
                         <img src="../icons/delimitation-land-plots-concept.png" alt="" class="rounded-circle me-4">
-                        <p class="m-0" onclick="showMenu(event)">John</p>
-                    </div>
-                    <div class="col-xl-3 col-lg-5 col-sm-6 d-flex flex-column rounded position-absolute p-0" id="nav_menu">
-                        <div class="row m-0 p-2 d-flex flex-row align-items-center" onclick="window.location.href = '../Profile/profileAdmin.html'">
-                            <div class="col-1 d-flex flex-row justify-content-start align-items-center">
-                                <img src="../images/profile_blue.png" alt="">
-                            </div>
-                            <div class="col-10 d-flex flex-row align-items-center">
-                                <p class="ms-3">Profile</p>
-                            </div>
-                        </div>
-                        <div class="row m-0 p-2 d-flex flex-row align-items-center" onclick="window.location.href = '../Profile/profileAdmin.html'">
-                            <div class="col-1 d-flex flex-row justify-content-start align-items-center">
-                                <img src="../icons/password_blue.png" alt="">
-                            </div>
-                            <div class="col-10 d-flex flex-row align-items-center">
-                                <p class="ms-3">Change Password</p>
-                            </div>
-                        </div>
-                        <div class="row m-0 p-2 d-flex flex-row align-items-center" onclick="window.location.href = '../Settings/settings.html'">
-                            <div class="col-1 d-flex flex-row justify-content-start align-items-center">
-                                <img src="../images/settings_blue.png" alt="">
-                            </div>
-                            <div class="col-10 d-flex flex-row align-items-center">
-                                <p class="ms-3">Settings</p>
-                            </div>
-                        </div>
-                        <div class="row m-0 p-2 d-flex flex-row align-items-center" onclick="window.location.href = '../Login/loginAdmin.html'">
-                            <div class="col-1 d-flex flex-row justify-content-start align-items-center">
-                                <img src="../icons/logout_blue.png" alt="">
-                            </div>
-                            <div class="col-10 d-flex flex-row align-items-center">
-                                <p class="ms-3">Logout</p>
-                            </div>
-                        </div>
+                        <p class="m-0">John</p>
                     </div>
                 </div>
                 <div class="row m-0 d-flex flex-column p-4" id="main_content">
@@ -229,6 +198,40 @@
                             <button>Update Password</button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-5 col-sm-6 d-flex flex-column rounded position-absolute p-0" id="nav_menu">
+            <div class="row m-0 p-2 d-flex flex-row align-items-center" onclick="window.location.href = '../Profile/profileAdmin.html'">
+                <div class="col-1 d-flex flex-row justify-content-start align-items-center">
+                    <img src="../images/profile_blue.png" alt="">
+                </div>
+                <div class="col-10 d-flex flex-row align-items-center">
+                    <p class="ms-3">Profile</p>
+                </div>
+            </div>
+            <div class="row m-0 p-2 d-flex flex-row align-items-center" onclick="window.location.href = '../Profile/profileAdmin.html'">
+                <div class="col-1 d-flex flex-row justify-content-start align-items-center">
+                    <img src="../icons/password_blue.png" alt="">
+                </div>
+                <div class="col-10 d-flex flex-row align-items-center">
+                    <p class="ms-3">Change Password</p>
+                </div>
+            </div>
+            <div class="row m-0 p-2 d-flex flex-row align-items-center" onclick="window.location.href = '../Settings/settings.html'">
+                <div class="col-1 d-flex flex-row justify-content-start align-items-center">
+                    <img src="../images/settings_blue.png" alt="">
+                </div>
+                <div class="col-10 d-flex flex-row align-items-center">
+                    <p class="ms-3">Settings</p>
+                </div>
+            </div>
+            <div class="row m-0 p-2 d-flex flex-row align-items-center" onclick="window.location.href = '../Login/loginAdmin.html'">
+                <div class="col-1 d-flex flex-row justify-content-start align-items-center">
+                    <img src="../icons/logout_blue.png" alt="">
+                </div>
+                <div class="col-10 d-flex flex-row align-items-center">
+                    <p class="ms-3">Logout</p>
                 </div>
             </div>
         </div>

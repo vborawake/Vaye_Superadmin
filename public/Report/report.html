@@ -114,7 +114,7 @@
                 </div>
             </div>
             <div class="col-xxl-10 col-xl-10 col-lg-9 col-md-9 col-sm-8 p-0 m-0" id="content">
-                <div class="row d-flex flex-row align-items-center justify-content-between w-100 m-0" id="header">
+                <div class="row d-flex flex-row align-items-center justify-content-between w-100 m-0" id="header" onclick="gsap.to(document.querySelector('.search_bar'), { scaleX: 0, duration: 0.5 }); document.querySelector('.search_bar input').value = ''">
                     <div class="col-8 d-flex flex-row align-items-center">
                         <div class="navbar navbar-dark">
                             <div class="container-fluid">
@@ -126,7 +126,10 @@
                         <p class="m-0">Report</p>
                     </div>
                     <div class="col-4 d-flex flex-row justify-content-end align-items-center pe-4" id="user">
-                        <img src="../icons/search_white.png" alt="search" class="me-4">
+                        <div class="m-0 me-4 p-0 search_bar" onclick="event.stopPropagation();">
+                            <input type="text" placeholder="Search">
+                        </div>
+                        <img src="../icons/search_white.png" alt="search" class="me-4" onclick="event.stopPropagation(); gsap.to(event.currentTarget.previousElementSibling, { scaleX: 1, duration: 0.5 })">
                         <img src="../icons/delimitation-land-plots-concept.png" alt="" class="rounded-circle me-4">
                         <p class="m-0">John</p>
                     </div>
@@ -213,7 +216,7 @@
                         <div class="col-1 d-flex flex-row justify-content-start align-items-center">
                             <img src="../icons/password_blue.png" alt="">
                         </div>
-                        <div class="col-10 d-flex flex-row align-items-center">
+                        <div class="col-10 d-flex flex-row align-items-center" onclick="localStorage.setItem('changePassword', 'true')">
                             <p class="ms-3">Change Password</p>
                         </div>
                     </div>

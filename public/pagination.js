@@ -1,4 +1,4 @@
-const profileElement = document.querySelector('#user img:nth-child(2)');
+const profileElement = document.querySelector('#user img:nth-child(3)');
 const usernameElement = document.querySelector('#user p');
 const eye = document.querySelector('.eye');
 const input = eye ? eye.previousElementSibling : undefined;
