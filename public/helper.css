@@ -82,7 +82,7 @@
     font-weight: 600;
 }
 
-.container-fluid #content #header .navbar .navbar-toggler {
+.container-fluid #content .navbar .navbar-toggler {
     border: none;
     background: #09338F;
     height: 3rem;

@@ -187,63 +187,63 @@ input:focus {
 
 @media screen and (min-width: 992px) and (max-width: 1200px) {
     .container-fluid #content {
-        left: 25.05%;
+        left: 25.05% !important;
     }
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
     .container-fluid #content {
-        left: 0;
+        left: 0 !important;
         width: 100%;
     }
 
     .offcanvas.offcanvas-start {
-        width: 30%;
+        width: 30% !important;
     }
 
     #chat_section_offcanvas.offcanvas.offcanvas-start {
-        width: 50%;
+        width: 50% !important;
     }
 
     .container-fluid #sidebar {
-        width: 30%;
+        width: 30% !important;
     }
 }
 
 @media screen and (min-width: 576px) and (max-width: 768px) {
     .container-fluid #content {
-        left: 0;
+        left: 0 !important;
         width: 100%;
     }
 
     .offcanvas.offcanvas-start {
-        width: 40%;
+        width: 40% !important;
     }
 
     .container-fluid #sidebar {
-        width: 40%;
+        width: 40% !important;
     }
 
     #chat_section_offcanvas.offcanvas.offcanvas-start {
-        width: 70%;
+        width: 70% !important;
     }
 }
 
 @media screen and (min-width: 400px) and (max-width: 576px) {
     .container-fluid #content {
-        left: 0;
+        left: 0 !important;
         width: 100%;
     }
 
     .offcanvas.offcanvas-start {
-        width: 40%;
+        width: 40% !important;
     }
 
     .container-fluid #sidebar {
-        width: 40%;
+        width: 40% !important;
     }
 
     #chat_section_offcanvas.offcanvas.offcanvas-start {
-        width: 80%;
+        width: 80% !important;
     }
 }
