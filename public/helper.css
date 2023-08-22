@@ -419,6 +419,10 @@
     html {
         font-size: 14px;
     }
+
+    .container-fluid #content {
+        left: 25.05%;
+    }
     
     .container-fluid #content .input .contact .col-1 {
         width: 12%;
@@ -432,6 +436,10 @@
 @media screen and (min-width: 768px) and (max-width: 992px) {
     html {
         font-size: 14px;
+    }
+
+    .container-fluid #content {
+        left: 25.05%;
     }
     
     .container-fluid #content .input .contact .col-1 {
@@ -453,6 +461,19 @@
     html {
         font-size: 14px;
     }
+
+    .container-fluid #content {
+        left: 0;
+        width: 100%;
+    }
+
+    .offcanvas.offcanvas-start {
+        width: 40%;
+    }
+
+    .container-fluid #sidebar {
+        width: 40%;
+    }
     
     .container-fluid #content .input .contact .col-1 {
         width: 14%;
@@ -472,6 +493,19 @@
 @media screen and (min-width: 400px) and (max-width: 576px) {
     html {
         font-size: 12px;
+    }
+
+    .container-fluid #content {
+        left: 0;
+        width: 100%;
+    }
+
+    .offcanvas.offcanvas-start {
+        width: 40%;
+    }
+
+    .container-fluid #sidebar {
+        width: 40%;
     }
     
     .container-fluid #content .input .contact .col-1 {
