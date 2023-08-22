@@ -174,4 +174,34 @@ function addAnimations() {
         opacity: 0,
         stagger: 0.1
     });
+
+    gsap.from('#localization .table_stagger', {
+        y: '-2rem',
+        opacity: 0,
+        stagger: 0.1
+    });
+}
+
+function animateLocalization(e) {
+    gsap.from('#localization .table_stagger', {
+        y: '-2rem',
+        opacity: 0,
+        stagger: 0.1
+    });
+}
+
+function animateAuthentication(e) {
+    gsap.from('#authentication .table_stagger', {
+        y: '-2rem',
+        opacity: 0,
+        stagger: 0.1
+    });
+}
+
+function animateVerification(e) {
+    gsap.from('#verification .table_stagger', {
+        y: '-2rem',
+        opacity: 0,
+        stagger: 0.1
+    });
 }

@@ -140,6 +140,16 @@ function addAnimations() {
         opacity: 0,
         stagger: 0.1
     });
+
+    gsap.from('.scroll_stagger', {
+        y: '-2rem',
+        opacity: 0,
+        stagger: 0.1,
+        scrollTrigger: {
+            trigger: '.scroll_stagger',
+            start: 'top center'
+        }
+    })
 }
 
 function changeTab(event) {

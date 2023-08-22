@@ -53,9 +53,9 @@ function addAnimations() {
         duration: 1
     });
 
-    // gsap.from('.stagger', {
-    //     y: '-2rem',
-    //     opacity: 0,
-    //     stagger: 0.1
-    // });
+    gsap.from('.stagger', {
+        y: '-2rem',
+        opacity: 0,
+        stagger: 0.1
+    });
 }

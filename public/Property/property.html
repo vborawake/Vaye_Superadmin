@@ -144,14 +144,14 @@
                             <img src="../icons/search_gray.png" alt="">
                         </div>
                     </div>
-                    <div class="nav nav-underline mb-3">
-                        <li class="nav-item"><a href="#localization" class="nav-link active" data-bs-toggle="tab" data-bs-target="#localization" aria-controls="localization">Localization Requests</a></li>
-                        <li class="nav-item"><a href="#verification" class="nav-link" data-bs-toggle="tab" data-bs-target="#verification" aria-controls="verification">Verification Requests</a></li>
-                        <li class="nav-item"><a href="#authentication" class="nav-link" data-bs-toggle="tab" data-bs-target="#authentication" aria-controls="authentication">Authentication Requests</a></li>
+                    <div class="nav nav-underline mb-3 stagger">
+                        <li class="nav-item" onclick="animateLocalization(event)"><a href="#localization" class="nav-link active" data-bs-toggle="tab" data-bs-target="#localization" aria-controls="localization">Localization Requests</a></li>
+                        <li class="nav-item" onclick="animateVerification(event)"><a href="#verification" class="nav-link" data-bs-toggle="tab" data-bs-target="#verification" aria-controls="verification">Verification Requests</a></li>
+                        <li class="nav-item" onclick="animateAuthentication(event)"><a href="#authentication" class="nav-link" data-bs-toggle="tab" data-bs-target="#authentication" aria-controls="authentication">Authentication Requests</a></li>
                     </div>
-                    <div class="row tab-content m-0 p-0 mt-4" id="table_container">
+                    <div class="row tab-content m-0 p-0 mt-4 stagger" id="table_container">
                         <div class="tab-pane fade show active m-0 p-0" id="localization">
-                            <div class="row m-0 p-0 d-flex justify-content-between align-items-center" id="table_header">
+                            <div class="row m-0 p-0 d-flex justify-content-between align-items-center table_stagger" id="table_header">
                                 <p class="col-2 text-center">Property ID</p>
                                 <p class="col-2">Location</p>
                                 <p class="col-1 text-center">Request By</p>
@@ -159,7 +159,7 @@
                                 <p class="col-2 text-center">Property Listed</p>
                                 <p class="col-1 text-center">Action</p>
                             </div>
-                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center table_stagger" id="table_value">
                                 <p class="col-2 text-center">HG1254632</p>
                                 <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
                                 <p class="col-1 text-center">Mathew</p>
@@ -171,7 +171,7 @@
                                     <img src="../images/delete.png" alt="">
                                 </div>
                             </div>
-                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center table_stagger" id="table_value">
                                 <p class="col-2 text-center">HG1254632</p>
                                 <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
                                 <p class="col-1 text-center">Mathew</p>
@@ -183,7 +183,7 @@
                                     <img src="../images/delete.png" alt="">
                                 </div>
                             </div>
-                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center table_stagger" id="table_value">
                                 <p class="col-2 text-center">HG1254632</p>
                                 <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
                                 <p class="col-1 text-center">Mathew</p>
@@ -195,7 +195,7 @@
                                     <img src="../images/delete.png" alt="">
                                 </div>
                             </div>
-                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center table_stagger" id="table_value">
                                 <p class="col-2 text-center">HG1254632</p>
                                 <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
                                 <p class="col-1 text-center">Mathew</p>
@@ -207,7 +207,7 @@
                                     <img src="../images/delete.png" alt="">
                                 </div>
                             </div>
-                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center table_stagger" id="table_value">
                                 <p class="col-2 text-center">HG1254632</p>
                                 <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
                                 <p class="col-1 text-center">Mathew</p>
@@ -219,7 +219,7 @@
                                     <img src="../images/delete.png" alt="">
                                 </div>
                             </div>
-                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center table_stagger" id="table_value">
                                 <p class="col-2 text-center">HG1254632</p>
                                 <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
                                 <p class="col-1 text-center">Mathew</p>
@@ -233,7 +233,7 @@
                             </div>
                         </div>
                         <div class="tab-pane fade m-0 p-0" id="verification">
-                            <div class="row m-0 p-0 d-flex justify-content-between align-items-center" id="table_header">
+                            <div class="row m-0 p-0 d-flex justify-content-between align-items-center table_stagger" id="table_header">
                                 <p class="col-2 text-center">Property ID</p>
                                 <p class="col-2">Location</p>
                                 <p class="col-1 text-center">Request By</p>
@@ -241,7 +241,7 @@
                                 <p class="col-2 text-center">Request report</p>
                                 <p class="col-1 text-center">Action</p>
                             </div>
-                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center table_stagger" id="table_value">
                                 <p class="col-2 text-center">HG1254632</p>
                                 <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
                                 <p class="col-1 text-center">Mathew</p>
@@ -253,7 +253,7 @@
                                     <img src="../images/delete.png" alt="">
                                 </div>
                             </div>
-                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center table_stagger" id="table_value">
                                 <p class="col-2 text-center">HG1254632</p>
                                 <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
                                 <p class="col-1 text-center">Mathew</p>
@@ -265,7 +265,7 @@
                                     <img src="../images/delete.png" alt="">
                                 </div>
                             </div>
-                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center table_stagger" id="table_value">
                                 <p class="col-2 text-center">HG1254632</p>
                                 <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
                                 <p class="col-1 text-center">Mathew</p>
@@ -277,7 +277,7 @@
                                     <img src="../images/delete.png" alt="">
                                 </div>
                             </div>
-                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center table_stagger" id="table_value">
                                 <p class="col-2 text-center">HG1254632</p>
                                 <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
                                 <p class="col-1 text-center">Mathew</p>
@@ -292,7 +292,7 @@
                                     <img src="../images/delete.png" alt="">
                                 </div>
                             </div>
-                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center table_stagger" id="table_value">
                                 <p class="col-2 text-center">HG1254632</p>
                                 <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
                                 <p class="col-1 text-center">Mathew</p>
@@ -307,7 +307,7 @@
                                     <img src="../images/delete.png" alt="">
                                 </div>
                             </div>
-                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center table_stagger" id="table_value">
                                 <p class="col-2 text-center">HG1254632</p>
                                 <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
                                 <p class="col-1 text-center">Mathew</p>
@@ -324,7 +324,7 @@
                             </div>
                         </div>
                         <div class="tab-pane fade m-0 p-0" id="authentication">
-                            <div class="row m-0 p-0 d-flex justify-content-between align-items-center" id="table_header">
+                            <div class="row m-0 p-0 d-flex justify-content-between align-items-center table_stagger" id="table_header">
                                 <p class="col-2 text-center">Property ID</p>
                                 <p class="col-2">Location</p>
                                 <p class="col-1 text-center">Request By</p>
@@ -332,7 +332,7 @@
                                 <p class="col-2 text-center">Status</p>
                                 <p class="col-1 text-center">Action</p>
                             </div>
-                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center table_stagger" id="table_value">
                                 <p class="col-2 text-center">HG1254632</p>
                                 <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
                                 <p class="col-1 text-center">Mathew</p>
@@ -344,7 +344,7 @@
                                     <img src="../images/delete.png" alt="">
                                 </div>
                             </div>
-                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center table_stagger" id="table_value">
                                 <p class="col-2 text-center">HG1254632</p>
                                 <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
                                 <p class="col-1 text-center">Mathew</p>
@@ -356,7 +356,7 @@
                                     <img src="../images/delete.png" alt="">
                                 </div>
                             </div>
-                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center table_stagger" id="table_value">
                                 <p class="col-2 text-center">HG1254632</p>
                                 <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
                                 <p class="col-1 text-center">Mathew</p>
@@ -368,7 +368,7 @@
                                     <img src="../images/delete.png" alt="">
                                 </div>
                             </div>
-                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center table_stagger" id="table_value">
                                 <p class="col-2 text-center">HG1254632</p>
                                 <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
                                 <p class="col-1 text-center">Mathew</p>
@@ -380,7 +380,7 @@
                                     <img src="../images/delete.png" alt="">
                                 </div>
                             </div>
-                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center table_stagger" id="table_value">
                                 <p class="col-2 text-center">HG1254632</p>
                                 <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
                                 <p class="col-1 text-center">Mathew</p>
@@ -392,7 +392,7 @@
                                     <img src="../images/delete.png" alt="">
                                 </div>
                             </div>
-                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center" id="table_value">
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center table_stagger" id="table_value">
                                 <p class="col-2 text-center">HG1254632</p>
                                 <p class="col-2">Corner land Covington, TX, 76636, Hill County</p>
                                 <p class="col-1 text-center">Mathew</p>

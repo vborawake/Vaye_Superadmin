@@ -168,4 +168,10 @@ function addAnimations() {
         opacity: 0,
         stagger: 0.1
     });
+    
+    gsap.from('.table_stagger', {
+        y: '-2rem',
+        opacity: 0,
+        stagger: 0.1
+    });
 }
