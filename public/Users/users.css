@@ -265,6 +265,24 @@ input:focus {
     background: none;
 }
 
+.container-fluid .popup .popup_content .popup_left_side .image {
+    width: 9.5rem;
+    height: 9rem;
+    border-radius: 0.6rem;
+    background: #D6D6D6;
+}
+
+.container-fluid .popup .popup_content .popup_left_side button {
+    width: 9.5rem;
+    color: #E81C45;
+}
+
+.container-fluid .popup .popup_content .popup_left_side button:nth-child(3) {
+    border: none;
+    color: #FFF;
+    background: #E8821C;
+}
+
 @media screen and (min-width: 992px) and (max-width: 1200px) {
     .container-fluid #content {
         left: 25.05%;
