@@ -172,7 +172,7 @@ input:focus {
     border: 2px solid #F1EAEA !important;
 }
 
-.container-fluid .popup ul li {
+.container-fluid .popup ul.information li {
     list-style: disc;
     color: #7B7878;
 }
@@ -246,6 +246,10 @@ input:focus {
     width: 1.5rem;
     height: 1.5rem;
     margin-right: 1.5rem;
+}
+
+.container-fluid #content .dropdown-menu li {
+    list-style: none !important;
 }
 
 @media screen and (min-width: 992px) and (max-width: 1200px) {
