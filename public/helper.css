@@ -285,9 +285,18 @@
     border: none;
 }
 
-.container-fluid #content .input .contact .col-1 input {
+.container-fluid #content .input .contact .col-1 input,
+.container-fluid #content .input .contact .col-2 input {
     padding: 1rem;
     text-align: center;
+}
+
+.container-fluid #content .input .contact .col-2 {
+    width: 18%;
+}
+
+.container-fluid #content .input .contact .col-9 {
+    width: 85%;
 }
 
 .container-fluid #content .input .contact .col-10 {
