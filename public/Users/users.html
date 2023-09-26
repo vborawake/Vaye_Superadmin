@@ -150,7 +150,7 @@
                         <li class="nav-item"><a href="#all" class="nav-link" data-bs-toggle="tab" data-bs-target="#all" aria-controls="all">Seller</a></li>
                         <li class="nav-item"><a href="#all" class="nav-link" data-bs-toggle="tab" data-bs-target="#all" aria-controls="all">VIP</a></li>
                         <li class="nav-item"><a href="#verificators" class="nav-link" data-bs-toggle="tab" data-bs-target="#verificators" aria-controls="verificators">Verificators</a></li>
-                        <li class="nav-item"><a href="#all" class="nav-link" data-bs-toggle="tab" data-bs-target="#all" aria-controls="all">Authenticators</a></li>
+                        <li class="nav-item"><a href="#authenticators" class="nav-link" data-bs-toggle="tab" data-bs-target="#authenticators" aria-controls="authenticators">Authenticators</a></li>
                         <button class="addVerificatorAuthenticator" onclick="showAddScreen(event, 'open')" style="margin-left: auto; display: none;">Add Verificator</button>
                     </div>
                     <div class="row tab-content m-0 p-0 mt-4 stagger" id="table_container">
@@ -273,7 +273,7 @@
                                 <p class="col-2 text-center">Covington</p>
                                 <p class="col-2 text-center">22/07/2023</p>
                                 <div class="col-1 d-flex align-items-center justify-content-between">
-                                    <img onclick="showPopup(event, 'open')" src="../images/eye_blue.png" alt="">
+                                    <img onclick="showPopup(event, 'openVerificator')" src="../images/eye_blue.png" alt="">
                                     <img src="../images/stop_yellow.png" alt="">
                                     <img src="../images/delete.png" alt="">
                                 </div>
@@ -288,7 +288,7 @@
                                 <p class="col-2 text-center">Covington</p>
                                 <p class="col-2 text-center">22/07/2023</p>
                                 <div class="col-1 d-flex align-items-center justify-content-between">
-                                    <img onclick="showPopup(event, 'open')" src="../images/eye_blue.png" alt="">
+                                    <img onclick="showPopup(event, 'openVerificator')" src="../images/eye_blue.png" alt="">
                                     <img src="../images/stop_yellow.png" alt="">
                                     <img src="../images/delete.png" alt="">
                                 </div>
@@ -303,7 +303,7 @@
                                 <p class="col-2 text-center">Covington</p>
                                 <p class="col-2 text-center">22/07/2023</p>
                                 <div class="col-1 d-flex align-items-center justify-content-between">
-                                    <img onclick="showPopup(event, 'open')" src="../images/eye_blue.png" alt="">
+                                    <img onclick="showPopup(event, 'openVerificator')" src="../images/eye_blue.png" alt="">
                                     <img src="../images/stop_yellow.png" alt="">
                                     <img src="../images/delete.png" alt="">
                                 </div>
@@ -318,7 +318,7 @@
                                 <p class="col-2 text-center">Covington</p>
                                 <p class="col-2 text-center">22/07/2023</p>
                                 <div class="col-1 d-flex align-items-center justify-content-between">
-                                    <img onclick="showPopup(event, 'open')" src="../images/eye_blue.png" alt="">
+                                    <img onclick="showPopup(event, 'openVerificator')" src="../images/eye_blue.png" alt="">
                                     <img src="../images/stop_yellow.png" alt="">
                                     <img src="../images/delete.png" alt="">
                                 </div>
@@ -333,7 +333,7 @@
                                 <p class="col-2 text-center">Covington</p>
                                 <p class="col-2 text-center">22/07/2023</p>
                                 <div class="col-1 d-flex align-items-center justify-content-between">
-                                    <img onclick="showPopup(event, 'open')" src="../images/eye_blue.png" alt="">
+                                    <img onclick="showPopup(event, 'openVerificator')" src="../images/eye_blue.png" alt="">
                                     <img src="../images/stop_yellow.png" alt="">
                                     <img src="../images/delete.png" alt="">
                                 </div>
@@ -348,7 +348,107 @@
                                 <p class="col-2 text-center">Covington</p>
                                 <p class="col-2 text-center">22/07/2023</p>
                                 <div class="col-1 d-flex align-items-center justify-content-between">
-                                    <img onclick="showPopup(event, 'open')" src="../images/eye_blue.png" alt="">
+                                    <img onclick="showPopup(event, 'openVerificator')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade m-0 p-0" id="authenticators">
+                            <div class="row m-0 p-0 d-flex justify-content-between align-items-center verificator_table_stagger" id="table_header">
+                                <p class="col-2 text-center">Name</p>
+                                <p class="col-1 text-center">Type</p>
+                                <p class="col-3 text-center">Email</p>
+                                <p class="col-2 text-center">Location</p>
+                                <p class="col-2 text-center">Joined At</p>
+                                <p class="col-1 text-center">Action</p>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center verificator_table_stagger" id="table_value">
+                                <div class="col-2 d-flex align-items-center">
+                                    <span class="me-3"></span>
+                                    <p>Mathew</p>
+                                </div>
+                                <p class="col-1 text-center">Buyer</p>
+                                <p class="col-3 text-center">mathew@gmail.com</p>
+                                <p class="col-2 text-center">Covington</p>
+                                <p class="col-2 text-center">22/07/2023</p>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'openAuthenticator')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center verificator_table_stagger" id="table_value">
+                                <div class="col-2 d-flex align-items-center">
+                                    <span class="me-3"></span>
+                                    <p>Mathew</p>
+                                </div>
+                                <p class="col-1 text-center">Buyer</p>
+                                <p class="col-3 text-center">mathew@gmail.com</p>
+                                <p class="col-2 text-center">Covington</p>
+                                <p class="col-2 text-center">22/07/2023</p>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'openAuthenticator')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center verificator_table_stagger" id="table_value">
+                                <div class="col-2 d-flex align-items-center">
+                                    <span class="me-3"></span>
+                                    <p>Mathew</p>
+                                </div>
+                                <p class="col-1 text-center">Buyer</p>
+                                <p class="col-3 text-center">mathew@gmail.com</p>
+                                <p class="col-2 text-center">Covington</p>
+                                <p class="col-2 text-center">22/07/2023</p>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'openAuthenticator')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center verificator_table_stagger" id="table_value">
+                                <div class="col-2 d-flex align-items-center">
+                                    <span class="me-3"></span>
+                                    <p>Mathew</p>
+                                </div>
+                                <p class="col-1 text-center">Buyer</p>
+                                <p class="col-3 text-center">mathew@gmail.com</p>
+                                <p class="col-2 text-center">Covington</p>
+                                <p class="col-2 text-center">22/07/2023</p>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'openAuthenticator')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center verificator_table_stagger" id="table_value">
+                                <div class="col-2 d-flex align-items-center">
+                                    <span class="me-3"></span>
+                                    <p>Mathew</p>
+                                </div>
+                                <p class="col-1 text-center">Buyer</p>
+                                <p class="col-3 text-center">mathew@gmail.com</p>
+                                <p class="col-2 text-center">Covington</p>
+                                <p class="col-2 text-center">22/07/2023</p>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'openAuthenticator')" src="../images/eye_blue.png" alt="">
+                                    <img src="../images/stop_yellow.png" alt="">
+                                    <img src="../images/delete.png" alt="">
+                                </div>
+                            </div>
+                            <div class="row m-0 my-2 p-0 py-3 d-flex justify-content-between align-items-center verificator_table_stagger" id="table_value">
+                                <div class="col-2 d-flex align-items-center">
+                                    <span class="me-3"></span>
+                                    <p>Mathew</p>
+                                </div>
+                                <p class="col-1 text-center">Buyer</p>
+                                <p class="col-3 text-center">mathew@gmail.com</p>
+                                <p class="col-2 text-center">Covington</p>
+                                <p class="col-2 text-center">22/07/2023</p>
+                                <div class="col-1 d-flex align-items-center justify-content-between">
+                                    <img onclick="showPopup(event, 'openAuthenticator')" src="../images/eye_blue.png" alt="">
                                     <img src="../images/stop_yellow.png" alt="">
                                     <img src="../images/delete.png" alt="">
                                 </div>
@@ -625,6 +725,200 @@
                             </div>
                             <div class="col-6 m-0 p-0">
                                 <p class="m-0">XAF 2560000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup m-0 w-50 p-0 position-fixed" id="verificator_popup" style="left: 25%; display: none;">
+            <div class="row popup_header p-3 m-0">
+                <div class="popup_header-left col-6 d-flex align-items-center">
+                    <p>Verificator Details</p>
+                </div>
+                <div class="popup_header-right col-6 d-flex align-items-center justify-content-end" onclick="showPopup(event, 'closeVerificator')">
+                    <img src="../images/close_white.png" alt="close">
+                </div>
+            </div>
+            <div class="popup_content d-flex p-3 m-0">
+                <div class="popup_left_side d-flex flex-column align-items-center m-0 me-4 p-0">
+                    <div class="image m-0 p-0"></div>
+                    <button class='d-flex flex-row align-items-center my-4'>
+                        <img src='../images/delete.png' alt="" class='me-4' />
+                        Delete
+                    </button>
+                    <button class='d-flex flex-row align-items-center'>
+                        <img src='../images/stop_white.png' alt="" class='me-4' />
+                        Block
+                    </button>
+                </div>
+                <div class="popup_right_side flex-grow-1 m-0 p-0">
+                    <div class="row d-sm-flex flex-sm-column flex-md-row m-0 p-0">
+                        <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                            <div class="col-6 m-0 p-0">
+                                <p class="field m-0">Name</p>
+                            </div>
+                            <div class="col-6 m-0 p-0">
+                                <p class="m-0">Mathew</p>
+                            </div>
+                        </div>
+                        <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                            <div class="col-6 m-0 p-0">
+                                <p class="field m-0">Email</p>
+                            </div>
+                            <div class="col-6 m-0 p-0">
+                                <p class="m-0">john@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-sm-flex flex-sm-column flex-md-row m-0 p-0">
+                        <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                            <div class="col-6 m-0 p-0">
+                                <p class="field m-0">Location</p>
+                            </div>
+                            <div class="col-6 m-0 p-0">
+                                <p class="m-0">Covington</p>
+                            </div>
+                        </div>
+                        <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                            <div class="col-6 m-0 p-0">
+                                <p class="field m-0">Phone Number</p>
+                            </div>
+                            <div class="col-6 m-0 p-0">
+                                <p class="m-0">8989898989</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-sm-flex flex-sm-column flex-md-row m-0 p-0">
+                        <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                            <div class="col-6 m-0 p-0">
+                                <p class="field m-0">Type</p>
+                            </div>
+                            <div class="col-6 m-0 p-0">
+                                <p class="m-0">Verificator</p>
+                            </div>
+                        </div>
+                        <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                            <div class="col-6 m-0 p-0">
+                                <p class="field m-0">Joined At</p>
+                            </div>
+                            <div class="col-6 m-0 p-0">
+                                <p class="m-0">22/07/2023</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-sm-flex flex-sm-column flex-md-row m-0 p-0">
+                        <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                            <div class="col-6 m-0 p-0">
+                                <p class="field m-0">No. Of Requests Received</p>
+                            </div>
+                            <div class="col-6 m-0 p-0">
+                                <p class="m-0">20</p>
+                            </div>
+                        </div>
+                        <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                            <div class="col-6 m-0 p-0">
+                                <p class="field m-0">Requests Approved</p>
+                            </div>
+                            <div class="col-6 m-0 p-0">
+                                <p class="m-0">12</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup m-0 w-50 p-0 position-fixed" id="authenticator_popup" style="left: 25%; display: none;">
+            <div class="row popup_header p-3 m-0">
+                <div class="popup_header-left col-6 d-flex align-items-center">
+                    <p>Authenticator Details</p>
+                </div>
+                <div class="popup_header-right col-6 d-flex align-items-center justify-content-end" onclick="showPopup(event, 'closeAuthenticator')">
+                    <img src="../images/close_white.png" alt="close">
+                </div>
+            </div>
+            <div class="popup_content d-flex p-3 m-0">
+                <div class="popup_left_side d-flex flex-column align-items-center m-0 me-4 p-0">
+                    <div class="image m-0 p-0"></div>
+                    <button class='d-flex flex-row align-items-center my-4'>
+                        <img src='../images/delete.png' alt="" class='me-4' />
+                        Delete
+                    </button>
+                    <button class='d-flex flex-row align-items-center'>
+                        <img src='../images/stop_white.png' alt="" class='me-4' />
+                        Block
+                    </button>
+                </div>
+                <div class="popup_right_side flex-grow-1 m-0 p-0">
+                    <div class="row d-sm-flex flex-sm-column flex-md-row m-0 p-0">
+                        <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                            <div class="col-6 m-0 p-0">
+                                <p class="field m-0">Name</p>
+                            </div>
+                            <div class="col-6 m-0 p-0">
+                                <p class="m-0">Mathew</p>
+                            </div>
+                        </div>
+                        <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                            <div class="col-6 m-0 p-0">
+                                <p class="field m-0">Email</p>
+                            </div>
+                            <div class="col-6 m-0 p-0">
+                                <p class="m-0">john@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-sm-flex flex-sm-column flex-md-row m-0 p-0">
+                        <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                            <div class="col-6 m-0 p-0">
+                                <p class="field m-0">Location</p>
+                            </div>
+                            <div class="col-6 m-0 p-0">
+                                <p class="m-0">Covington</p>
+                            </div>
+                        </div>
+                        <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                            <div class="col-6 m-0 p-0">
+                                <p class="field m-0">Phone Number</p>
+                            </div>
+                            <div class="col-6 m-0 p-0">
+                                <p class="m-0">8989898989</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-sm-flex flex-sm-column flex-md-row m-0 p-0">
+                        <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                            <div class="col-6 m-0 p-0">
+                                <p class="field m-0">Type</p>
+                            </div>
+                            <div class="col-6 m-0 p-0">
+                                <p class="m-0">Authenticator</p>
+                            </div>
+                        </div>
+                        <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                            <div class="col-6 m-0 p-0">
+                                <p class="field m-0">Joined At</p>
+                            </div>
+                            <div class="col-6 m-0 p-0">
+                                <p class="m-0">22/07/2023</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-sm-flex flex-sm-column flex-md-row m-0 p-0">
+                        <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                            <div class="col-6 m-0 p-0">
+                                <p class="field m-0">No. Of Requests Received</p>
+                            </div>
+                            <div class="col-6 m-0 p-0">
+                                <p class="m-0">20</p>
+                            </div>
+                        </div>
+                        <div class="col-6 m-0 p-0 d-flex flex-md-row flex-sm-column align-items-center">
+                            <div class="col-6 m-0 p-0">
+                                <p class="field m-0">Requests Approved</p>
+                            </div>
+                            <div class="col-6 m-0 p-0">
+                                <p class="m-0">12</p>
                             </div>
                         </div>
                     </div>

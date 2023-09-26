@@ -1,4 +1,6 @@
 const userPopup = document.getElementById('user_popup');
+const verificatorPopup = document.getElementById('verificator_popup');
+const authenticatorPopup = document.getElementById('authenticator_popup');
 let activeTabName = '';
 const main = document.querySelector('.main');
 const addScreen = document.querySelector('.add_screen');
@@ -45,6 +47,10 @@ async function closePopup(element) {
 
 async function showPopup(e, action) {
     if (action === 'open') await openPopup(userPopup);
+    else if (action === 'openVerificator') await openPopup(verificatorPopup);
+    else if (action === 'openAuthenticator') await openPopup(authenticatorPopup);
+    else if (action === 'closeVerificator') await closePopup(verificatorPopup);
+    else if (action === 'closeAuthenticator') await closePopup(authenticatorPopup);
     else await closePopup(userPopup);
 }
 
